@@ -115,7 +115,7 @@ const Work = () => {
             </a>
           </motion.svg>
           <div className="title">
-            <h4>AR Guide</h4>
+            <h4>Meld verdachte situatie</h4>
             <div className="desc">
               <p>floating text</p>
             </div>
