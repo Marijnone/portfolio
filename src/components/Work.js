@@ -1,67 +1,71 @@
-import React from "react"
-import { motion } from "framer-motion"
+import React, { useEffect } from 'react'
+import { useAnimation, motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
-import image1 from "../images/ar-guide.png"
+import image1 from '../images/ar-guide.png'
 
-const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.96] }
+const transition = { duration: 8.8, ease: [0.6, -0.05, 0.01, 0.9] }
+
+//Variants
+
+const titleShowUp = {
+  initial: { y: 200 },
+  animate: { y: 0 },
+}
 
 const Work = () => {
-  
-  const variants = {
-    variantA: {
-      scale: 0.9,
-      rotate: 0,
-      transition: { duration: 5.2, ...transition },
-      y: 0
-    },
-    variantB: {
-      scale: 1.3,
-      rotate: 9,
-      height: 500,
-      width: 500
-    },
-    variantC: {
-      y: 9
+  const animation = useAnimation()
+  const [contentRef, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: '-300px',
+  })
+
+  useEffect(() => {
+    if (inView) {
+      animation.start('visible')
     }
-  }
+  }, [animation, inView])
 
   return (
-    <section className="work">
+    <motion.section
+      className="work"
+      ref={contentRef}
+      animate={animation}
+      initial="hidden"
+      variants={{
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] },
+        },
+        hidden: {
+          opacity: 0,
+          y: 72,
+        },
+      }}
+    >
       <h2>Work</h2>
-      <div className="items">
+      <motion.div className="items">
         <div className="work-item-1">
           <motion.svg
-            drag="x"
-            dragConstraints={{ left: 12, right: 12, top: 12, bottom: 12 }}
-            dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
             width="440"
             height="398"
             viewBox="0 0 440 398"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            initial={"variantA"}
-            whileHover={"variantB"}
-            variants={variants}
           >
             <a href="/case-1">
               <circle cx="241" cy="199" r="199" fill="#C4C4C4" />
               <circle cx="199" cy="199" r="199" fill="#B1FCEB" />
-              <motion.image
-                initial={{ opacity: 0, y: 30, transition: transition }}
-                whileHover={{ opacity: 1, y: -30.2 }}
-                height="100%"
-                width="100%"
-                xlink
-                href={image1}
-              />
+              <motion.image height="100%" width="100%" />
             </a>
           </motion.svg>
           <div className="title">
             <h4>AR Guide</h4>
-          </div>
-          <div className="desc">
-            {" "}
-            <p>floating text</p>
+            <div className="desc">
+              {' '}
+              <p>floating text</p>
+            </div>
           </div>
         </div>
         <div className="work-item-2">
@@ -74,9 +78,6 @@ const Work = () => {
             viewBox="0 0 440 398"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            initial={"variantA"}
-            whileHover={"variantB"}
-            variants={variants}
           >
             <a href="/case-2">
               <motion.circle cx="241" cy="199" r="199" fill="#C4C4C4" />
@@ -86,7 +87,7 @@ const Work = () => {
           <div className="title">
             <h4>Spatial Valley</h4>
             <div className="desc">
-              {" "}
+              {' '}
               <p>floating text</p>
             </div>
           </div>
@@ -101,9 +102,6 @@ const Work = () => {
             viewBox="0 0 440 398"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            initial={"variantA"}
-            whileHover={"variantB"}
-            variants={variants}
           >
             <a href="/case-1">
               <circle cx="241" cy="199" r="199" fill="#C4C4C4" />
@@ -123,8 +121,8 @@ const Work = () => {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   )
 }
 export default Work

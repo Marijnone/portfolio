@@ -1,6 +1,6 @@
-import { Link } from "gatsby"
-import React from "react"
-import "../styles/components/header.scss"
+import { Link } from 'gatsby'
+import React from 'react'
+import '../styles/components/header.scss'
 
 const Header = ({ children, location }) => (
   <header>
