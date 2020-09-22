@@ -1,0 +1,26 @@
+$font: "Helvetica Nue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+//Colors
+$light-grey: #dadada;
+$black: #000000;
+$shadow-grey: #5E5E5E;
+$special-blue:#0C3DEE;
+
+// Box shadow 
+$grey-shadow: 0px 8px 24px rgba(0, 0, 0, 0.100716);
+
+$gradient-1: conic-gradient(from 21.37deg at 50% 50%, rgba(12, 61, 238, 0.5) -241.99deg, #B1FCEB 116.28deg, rgba(12, 61, 238, 0.5) 118.01deg, #B1FCEB 476.28deg);
+$gradient-2: conic-gradient(from 21.37deg at 50% 50%, rgba(250, 28, 68, 0.75) 0deg, rgba(37, 180, 246, 0.5) 358.23deg, rgba(250, 28, 68, 0.75) 360deg);
+$gradient-3: conic-gradient(from 180deg at 50% 50%, #776EB8 0deg, rgba(10, 208, 187, 0.42) 360deg);
+
+
+
+$mobile-small: 321px;
+$mobile-medium: 376px;
+$mobile-large: 414px;
+$tablet-small: 562px;
+$tablet-medium: 768px;
+$desktop-small: 1120px;
+$desktop-medium: 1280px;
+$desktop-large: 1536px;

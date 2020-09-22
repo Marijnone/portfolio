@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Nav from '../components/Nav'
-import '../styles/style.css'
+import '../styles/main.scss'
 
 const duration = 0.5
 
@@ -22,6 +22,7 @@ const variants = {
     transition: { duration: duration },
   },
 }
+const isSSR = typeof window === "undefined"
 
 const Layout = ({ children, location }) => (
   <>
@@ -33,6 +34,8 @@ const Layout = ({ children, location }) => (
         padding: `1em`,
       }}
     >
+      
+      {!isSSR && 
       <AnimatePresence>
         <motion.main
           key={location.pathname}
@@ -44,6 +47,7 @@ const Layout = ({ children, location }) => (
           {children}
         </motion.main>
       </AnimatePresence>
+        }
     </div>
   </>
 )
