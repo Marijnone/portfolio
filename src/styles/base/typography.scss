@@ -90,6 +90,10 @@ p {
   font-weight: 900;
   line-height: 28px;
 
+  &.small {
+    font-size: 18px;
+  }
+
   @media screen and (max-width: $mobile-large) {
     font-size: 18px;
     line-height: 24px;

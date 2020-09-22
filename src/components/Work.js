@@ -3,22 +3,22 @@ import { motion } from "framer-motion"
 
 import image1 from "../images/ar-guide.png"
 
-const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] }
+const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.96] }
 
 const Work = () => {
   const variants = {
     variantA: {
       scale: 0.9,
       rotate: 0,
-      transition: { duration: 1.2, ...transition },
+      transition: { duration: 5.2, ...transition },
       y: 0
     },
     variantB: {
-      scale: 1.0,
+      scale: 1.5,
       rotate: 9
     },
     variantC: {
-      y: 1
+      y: 9
     }
   }
 
@@ -40,7 +40,7 @@ const Work = () => {
             whileHover={"variantB"}
             variants={variants}
           >
-            <a href="/">
+            <a href="/case-1">
               <circle cx="241" cy="199" r="199" fill="#C4C4C4" />
               <circle cx="199" cy="199" r="199" fill="#B1FCEB" />
               <motion.image

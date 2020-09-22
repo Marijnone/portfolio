@@ -7,6 +7,7 @@ img * {
 .grid-container-case {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  margin: 128px auto 40px;
   // grid-auto-rows: 80px;
   .header-image {
     display: grid;
@@ -40,6 +41,13 @@ img * {
 .fp {
   display: grid;
   grid-column: 2 / 12;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  gap: 10em;
+  margin-top: 24px;
 }
 .prototyping {
   display: grid;
