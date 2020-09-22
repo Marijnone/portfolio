@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-using-page-transitions",
-  "description": "Gatsby example site using page transitions",
+  "name": "Portfolio website",
+  "description": "Animations with framer motion",
   "version": "1.0.1",
-  "author": "Ryan Wiemer <https://www.ryanwiemer.com>",
+  "author": "Marijn Moviat",
   "dependencies": {
     "framer": "^1.2.7",
     "framer-motion": "^2.6.13",
