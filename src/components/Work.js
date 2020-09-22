@@ -64,7 +64,7 @@ const Work = () => {
             <h4>AR Guide</h4>
             <div className="desc">
               {' '}
-              <p>floating text</p>
+              <p>client:</p>
             </div>
           </div>
         </div>
