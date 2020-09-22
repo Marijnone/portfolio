@@ -2,6 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import Layout from "../components/Layout"
+ 
+import "../styles/pages/case-1.scss"
+
 const container = {
   enter: {
     transition: {
@@ -19,30 +22,18 @@ const item = {
 };
 
 const AnimatedPage = () => (
-  <>
-  <Layout>
-    <h1>Animated After Page Mount</h1>
-    <p>
-      As mentioned on{" "}
-      <a
-        href="https://github.com/framer/motion/issues/294#issuecomment-629353859"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        framer/motion#294
-      </a>{" "}
-      the child variant keys need to be named the same as the parent variant
-      keys. This may change in the future but just something to be aware of.{" "}
-    </p>
-    <motion.ul variants={container}>
-      <motion.li variants={item}>I am</motion.li>
-      <motion.li variants={item}>staggered content</motion.li>
-      <motion.li variants={item}>that animates in</motion.li>
-      <motion.li variants={item}>after the initial</motion.li>
-      <motion.li variants={item}>page fade</motion.li>
-    </motion.ul>
-  </Layout>
-  </>
+  <section className="grid-container-case">
+    <h2>Animated After Page Mount</h2>
+    
+      <motion.ul variants={container}>
+        <motion.p variants={item}>I am</motion.p>
+        <motion.p variants={item}>staggered content</motion.p>
+        <motion.p variants={item}>that animates in</motion.p>
+        <motion.p variants={item}>after the initial</motion.p>
+        <motion.p variants={item}>page fade</motion.p>
+      </motion.ul>
+    </section>
+
 );
 
 export default AnimatedPage;

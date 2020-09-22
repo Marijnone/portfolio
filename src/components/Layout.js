@@ -1,7 +1,8 @@
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Nav from '../components/Nav'
+import Header from './Header'
 import '../styles/main.scss'
+
 
 const duration = 0.5
 
@@ -26,9 +27,9 @@ const isSSR = typeof window === "undefined"
 
 const Layout = ({ children, location }) => (
   <>
-    <Nav />
-    {/* <div className={`layout-container${children.isCase ? "-case" : ""}`}
-    > */}
+    <Header />
+    <div className={`layout-container${children.isCase ? "-case" : ""}`}
+    >
       {!isSSR && 
       <AnimatePresence>
         <motion.main
@@ -42,7 +43,7 @@ const Layout = ({ children, location }) => (
         </motion.main>
       </AnimatePresence>
         }
-    {/* </div> */}
+    </div>
   </>
 )
 

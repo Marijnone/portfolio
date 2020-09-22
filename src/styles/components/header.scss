@@ -1,0 +1,58 @@
+@import "../variables.scss";
+
+.container {
+  width: 1640px;
+  min-width: 1640px;
+  margin: 0 auto;
+  @media (max-width: $desktop-large) {
+    width: 1280px;
+    min-width: 1280px;
+  }
+  @media (max-width: $desktop-medium) {
+    width: 976px;
+    min-width: 976px;
+  }
+  @media (max-width: $tablet-medium) {
+    width: 0;
+    min-width: 150px;
+  }
+}
+
+header {
+  width: 100%;
+  max-width: 750px;
+  height: 80px;
+  position: absolute;
+  z-index: 10;
+  top: 0px;
+  .inner-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    @media (max-width: 976px) {
+      justify-content: center;
+    }
+    .logo {
+      a {
+        font-weight: 700;
+        text-decoration: none;
+        letter-spacing: 1.5px;
+        color: $black;
+      }
+    }
+    .navigation {
+      nav {
+        a {
+          font-family: Mint Grotesk;
+          margin: 0 24px;
+          text-decoration: none;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
