@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+import Layout from "../components/Layout"
 const container = {
   enter: {
     transition: {
@@ -19,6 +20,7 @@ const item = {
 
 const AnimatedPage = () => (
   <>
+  <Layout>
     <h1>Animated After Page Mount</h1>
     <p>
       As mentioned on{" "}
@@ -39,6 +41,7 @@ const AnimatedPage = () => (
       <motion.li variants={item}>after the initial</motion.li>
       <motion.li variants={item}>page fade</motion.li>
     </motion.ul>
+  </Layout>
   </>
 );
 

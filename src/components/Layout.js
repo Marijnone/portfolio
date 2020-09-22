@@ -27,18 +27,12 @@ const isSSR = typeof window === "undefined"
 const Layout = ({ children, location }) => (
   <>
     <Nav />
-    <div
-      style={{
-        margin: `60px auto 0`,
-        maxWidth: 960,
-        padding: `1em`,
-      }}
-    >
-      
+    {/* <div className={`layout-container${children.isCase ? "-case" : ""}`}
+    > */}
       {!isSSR && 
       <AnimatePresence>
         <motion.main
-          key={location.pathname}
+          key={window.location}
           variants={variants}
           initial="initial"
           animate="enter"
@@ -48,7 +42,7 @@ const Layout = ({ children, location }) => (
         </motion.main>
       </AnimatePresence>
         }
-    </div>
+    {/* </div> */}
   </>
 )
 
