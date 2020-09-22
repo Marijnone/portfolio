@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Header from './Header'
+import Cursor from '../components/CustomCursor'
 import '../styles/main.scss'
 
 
@@ -28,6 +29,7 @@ const isSSR = typeof window === "undefined"
 const Layout = ({ children, location }) => (
   <>
     <Header />
+    
     <div className={`layout-container${children.isCase ? "-case" : ""}`}
     >
       {!isSSR && 

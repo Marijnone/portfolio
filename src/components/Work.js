@@ -6,6 +6,7 @@ import image1 from "../images/ar-guide.png"
 const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.96] }
 
 const Work = () => {
+  
   const variants = {
     variantA: {
       scale: 0.9,
@@ -14,8 +15,10 @@ const Work = () => {
       y: 0
     },
     variantB: {
-      scale: 1.5,
-      rotate: 9
+      scale: 1.3,
+      rotate: 9,
+      height: 500,
+      width: 500
     },
     variantC: {
       y: 9
