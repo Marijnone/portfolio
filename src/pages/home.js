@@ -6,9 +6,14 @@ import Shapes from '../components/Shapes'
 import Intro from '../components/Intro'
 import Work from '../components/Work'
 
+//Hooks
+import UseMousePosition from '../hooks/getMousePosition'
+
+
 // const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }
 
 const Home = () => {
+  const { x, y } = UseMousePosition()
   const animation = useAnimation()
   const [contentRef, inView] = useInView({
     triggerOnce: true,
@@ -27,7 +32,7 @@ const Home = () => {
     <>
       {!isSSR && <Shapes />}
       {!isSSR && <Intro />}
-      {!isSSR && <Work />}
+      {!isSSR && <Work x={x} y={y} />}
       {/* <Music /> */}
     </>
   )

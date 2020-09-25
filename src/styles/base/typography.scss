@@ -70,17 +70,20 @@ h3 {
 
 h4 {
   @media screen and (max-width: $tablet-small) {
-   font-size: 18px;
-   line-height: 30px;
- }
- @media screen and (max-width: $tablet-medium) {
-  font-size: 19px;
-  line-height: 30px;
-}
+    font-size: 18px;
+    line-height: 30px;
+  }
+  @media screen and (max-width: $tablet-medium) {
+    font-size: 19px;
+    line-height: 30px;
+  }
   font-size: 32px;
   font-family: Mint Grotesk;
   font-weight: 700;
-  
+
+  &.grey {
+    color: $shadow-grey;
+  }
 }
 
 p {
@@ -92,6 +95,10 @@ p {
 
   &.small {
     font-size: 18px;
+  }
+
+  &.grey {
+    color: $shadow-grey;
   }
 
   @media screen and (max-width: $mobile-large) {

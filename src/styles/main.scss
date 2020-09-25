@@ -8,6 +8,7 @@
 @import "../styles/pages/case-1.scss";
 
 //Components
+@import "../styles/components/work.scss";
 @import "../styles/components/layout.scss";
 
 
@@ -159,49 +160,6 @@ span.span-prof-2:nth-child(1) > span:nth-child(9) {
 // }
 
 //Work Section
-
-.work {
-  display: grid;
-  height: 100vh;
-  margin-bottom: 62px;
-  @media screen and (max-width: $mobile-large) {
-    grid-template-columns: 1fr;
-  }
-
-  .work-item-1,
-  .work-item-2,
-  .work-item-3 {
-    display: grid;
-  }
-
-  .items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 6px;
-
-    svg {
-      // height: 250px; temp disable
-      width: 250px;
-      display: grid;
-      justify-self: center;
-
-      @media screen and (max-width: $desktop-small) {
-        height: 150px;
-        width: 150px;
-      }
-    }
-    .title {
-      h4 {
-        display: flex;
-        align-items: flex-end;
-        line-clamp: 1;
-      }
-      .desc {
-        
-      }
-    }
-  }
-}
 
 .music {
   display: grid;

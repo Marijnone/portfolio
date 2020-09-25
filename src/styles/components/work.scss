@@ -1,0 +1,51 @@
+.work {
+    display: grid;
+    height: 90vh;
+    // margin-bottom: 62px;
+    // @media screen and (max-width: $mobile-large) {
+    //   grid-template-columns: 1fr;
+    // }
+  
+    .work-item-1,
+    .work-item-2,
+    .work-item-3 {
+      display: grid;
+    }
+
+    .floating-image {
+      pointer-events: none;
+      width: 50%;
+      height: 50%;
+      position: absolute;
+      overflow: hidden;
+    }
+  
+    .items {
+      display: grid;
+    //   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 6px;
+  
+      svg {
+        // height: 250px; temp disable
+        width: 250px;
+        display: grid;
+        justify-self: center;
+  
+        @media screen and (max-width: $desktop-small) {
+          height: 150px;
+          width: 150px;
+        }
+      }
+      .title {
+        h4 {
+          display: flex;
+          align-items: flex-end;
+          line-clamp: 1;
+        }
+        .desc {
+          
+        }
+      }
+    }
+  }
+  

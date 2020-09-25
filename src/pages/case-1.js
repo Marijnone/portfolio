@@ -1,17 +1,33 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from "react"
+import { motion } from "framer-motion"
 
-import '../styles/pages/case-1.scss'
+import "../styles/pages/case-1.scss"
 
-import Layout from '../components/Layout'
+import Layout from "../components/Layout"
 
 const transition = { duration: 1.4, ease: [0.6, 0.05, -0.01, 0.9] }
+
+// Framer motion Variants
+
+// const parent = {
+//   initial: {
+//     opacity: 0,
+//   },
+//   animate: {
+//     opacity: 1,
+//     transition: {
+//       staggerChildren: 0.5,
+//       delayChildren: 1.6,
+//     },
+//   },
+// }
 
 const container = {
   enter: {
     transition: {
-      when: 'beforeChildren',
-      staggerChildren: 0.05,
+      when: "beforeChildren",
+      staggerChildren: 0.4,
+      delayChildren: 0.5,
     },
   },
 }
@@ -24,8 +40,14 @@ export const mainContent = {
   enter: {
     opacity: 1,
     y: 0,
-    transition: { duration: 1.1, ...transition },
+    transition: {  ...transition },
   },
+}
+
+const titleShowUp = {
+  initial: { y: 70, opacity: 0 },
+  animate: { y: 0, opacity: 1 , transition: { duration: 1.1, delay: 2.1, ease: [0.6, 0.05, -0.01, 0.9]}},
+  
 }
 
 const AnimatedPage = () => (
@@ -34,10 +56,28 @@ const AnimatedPage = () => (
       <motion.h2 variants={mainContent} className="blue">
         PO-33 AR Guide
       </motion.h2>
-      <div className="details">
-        <p className="small">Client: Teenage Engineering</p>
-        <p className="small">Service: UX Design & Development</p>
-      </div>
+      <motion.div
+        className="details"
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={container}
+      >
+        <motion.p
+          className="small"
+          variants={titleShowUp}
+          transition={transition}
+        >
+          Client: Teenage Engineering
+        </motion.p>
+        <motion.p
+          className="small"
+          variants={titleShowUp}
+          transition={transition}
+        >
+          Service: UX Design & Development
+        </motion.p>
+      </motion.div>
       <motion.p variants={mainContent}>
         For my graduation project at the University of Applied Arts I’ve took on
         the challenge to develop an AR guide for the famous Pocket operator drum

@@ -6,6 +6,7 @@ import '../styles/main.scss'
 
 const duration = .6
 
+
 const variants = {
   initial: {
     opacity: 0,
@@ -23,10 +24,11 @@ const variants = {
     transition: { duration: duration },
   },
 }
+//Hook call
 
 const isSSR = typeof window === 'undefined'
 
-const Layout = ({ children, location }) => (
+const Layout = ({ children, location}) => (
   <>
     <Header />
 
@@ -40,6 +42,7 @@ const Layout = ({ children, location }) => (
             animate="enter"
             exit="exit"
           >
+            
             {children}
           </motion.main>
         </AnimatePresence>
