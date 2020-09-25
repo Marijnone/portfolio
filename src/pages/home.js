@@ -32,7 +32,7 @@ const Home = () => {
     <>
       {!isSSR && <Shapes />}
       {!isSSR && <Intro />}
-      {!isSSR && <Work x={x} y={y} />}
+      {!isSSR && <Work />}
       {/* <Music /> */}
     </>
   )

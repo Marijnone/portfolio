@@ -1,15 +1,11 @@
 .cursor {
+    cursor: pointer;
+    height: 2.5rem;
+    width: 2.5rem;
     position: absolute;
+    z-index: 10;
     top: 0;
-    left: 0;
-    width: 132px;
-    height: 132px;
+    background-color: violet;
     border-radius: 100%;
-    transform: translate(-50%, -50%);
-    transition: all .1s ease-in-out;
-    transition-property: width, height, border;
-    will-change: width, height, border;
     pointer-events: none;
-    z-index: 999;
-    background: red;
 }

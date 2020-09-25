@@ -30,6 +30,8 @@ const Work = (x, y) => {
   }, [animation, inView])
 
   return (
+    
+    
     <motion.section
       className="work"
       ref={contentRef}
@@ -47,6 +49,7 @@ const Work = (x, y) => {
         },
       }}
     >
+      
       <motion.h2
         variants={{
           visible: {
@@ -72,12 +75,11 @@ const Work = (x, y) => {
               x: x,
               y: y,
             }}
+            transition={{ ease: "linear" }}
           >
             <img src={image1} alt="" />
           </motion.div>
           <motion.svg
-            onHoverStart={() => setHoverState(true)}
-            onHoverEnd={() => setHoverState(false)}
             width="440"
             height="398"
             viewBox="0 0 440 398"
@@ -110,7 +112,13 @@ const Work = (x, y) => {
             }}
             className="title"
           >
-            <h4 class="grey">AR Guide</h4>
+            <motion.h4
+              className="grey"
+              onHoverStart={() => setHoverState(true)}
+              onHoverEnd={() => setHoverState(false)}
+            >
+              AR Guide
+            </motion.h4>
             <div className="desc">
               <p>client:</p>
             </div>
