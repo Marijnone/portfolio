@@ -1,5 +1,6 @@
 import React from "react"
 import { Frame, useAnimation } from "framer"
+// import { motion } from "framer-motion"
 
 const Shape1 = props => {
   return (
