@@ -8,6 +8,7 @@ img * {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   margin: 128px auto 40px;
+  padding: 10em auto;
   // grid-auto-rows: 80px;
   @media screen and (max-width: $mobile-large) {
     grid-template-columns: repeat(6, 1fr);

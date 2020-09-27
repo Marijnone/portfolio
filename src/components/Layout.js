@@ -2,7 +2,6 @@ import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Header from "./Header"
 
-
 //Styles
 import "../styles/main.scss"
 
@@ -36,7 +35,6 @@ const Layout = ({ children, location }) => {
   const { x, y } = UseMousePosition()
   return (
     <>
-    
       <Header />
       <div className="layout-container">
         {!isSSR && (
@@ -50,18 +48,17 @@ const Layout = ({ children, location }) => {
             >
               {children}
             </motion.main>
-            <motion.div
-        animate={{
-          x: x,
-          y: y,
-        }}
-        transition={{
-          ease: "linear",
-          // duration: 0.2,
-        }}
-        className="cursor"
-      >
-      </motion.div>
+            {/* <motion.div //custom cursor
+              animate={{
+                x: x,
+                y: y,
+              }}
+              transition={{
+                ease: "linear",
+                // duration: 0.2,
+              }}
+              className="cursor"
+            ></motion.div> */}
           </AnimatePresence>
         )}
       </div>

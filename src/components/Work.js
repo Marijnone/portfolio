@@ -8,6 +8,8 @@ const transition = { duration: 8.8, ease: [0.6, -0.05, 0.01, 0.9] }
 
 //Variants
 
+
+
 const titleShowUp = {
   initial: { y: 200 },
   animate: { y: 0 },
@@ -30,8 +32,6 @@ const Work = (x, y) => {
   }, [animation, inView])
 
   return (
-    
-    
     <motion.section
       className="work"
       ref={contentRef}
@@ -49,7 +49,6 @@ const Work = (x, y) => {
         },
       }}
     >
-      
       <motion.h2
         variants={{
           visible: {
@@ -80,6 +79,8 @@ const Work = (x, y) => {
             <img src={image1} alt="" />
           </motion.div>
           <motion.svg
+            onHoverStart={() => setHoverState(true)}
+            onHoverEnd={() => setHoverState(false)}
             width="440"
             height="398"
             viewBox="0 0 440 398"

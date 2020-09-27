@@ -13,12 +13,22 @@
     }
 
     .floating-image {
+      display: block;
       pointer-events: none;
       width: 50%;
       height: 50%;
       position: absolute;
       overflow: hidden;
+     
+      
+
+
+      @media screen and (max-width: $tablet-small) {
+        height: 250px;
+        width: 350px;
+      }
     }
+
   
     .items {
       display: grid;
