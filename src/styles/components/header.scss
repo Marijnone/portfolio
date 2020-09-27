@@ -1,8 +1,7 @@
 @import "../variables.scss";
 
 .container {
-  width: 1640px;
-  min-width: 1640px;
+  min-width: 1500px;
   margin: 0 auto;
   @media (max-width: $desktop-large) {
     width: 1280px;

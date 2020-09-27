@@ -69,17 +69,22 @@ h3 {
 }
 
 h4 {
+  font-size: 32px;
+  font-family: Mint Grotesk;
+  font-weight: 700;
+  margin-bottom: 24px;
+
   @media screen and (max-width: $tablet-small) {
     font-size: 18px;
     line-height: 30px;
+    margin-bottom: 24px;
   }
   @media screen and (max-width: $tablet-medium) {
     font-size: 19px;
     line-height: 30px;
+    margin-bottom: 12px;
   }
-  font-size: 32px;
-  font-family: Mint Grotesk;
-  font-weight: 700;
+
 
   &.grey {
     color: $shadow-grey;

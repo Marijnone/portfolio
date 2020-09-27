@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react"
 import { useAnimation, motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
+import { userStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import "../styles/pages/case-1.scss"
-import { getFileInfo } from "prettier"
+
+//Gifs
+import prototypegif1 from "../images/case-1/gifs/prototype2.gif"
+import prototypegif2 from "../images/case-1/gifs/prototype3.gif"
 
 const transition = { duration: 1.4, ease: [0.6, 0.05, -0.01, 0.9] }
 
@@ -21,6 +26,20 @@ const transition = { duration: 1.4, ease: [0.6, 0.05, -0.01, 0.9] }
 //     },
 //   },
 // }
+
+const imageAnimation = {
+  initial: {
+    opacity: 0,
+    y: 0,
+    // width: "50%",
+  },
+  enter: {
+    opacity: 1,
+    y: 30,
+    // width: "100%",
+    transition: { ...transition },
+  },
+}
 
 const container = {
   enter: {
@@ -66,11 +85,11 @@ const showUp = {
   },
 }
 
-const AnimatedPage = () => {
+const AnimatedPage = (props) => {
   const animation = useAnimation()
   const [contentRef, inView] = useInView({
     triggerOnce: true,
-    rootMargin: "-200px",
+    rootMargin: "-100px",
     // threshold: [0, 0.5],
   })
 
@@ -86,6 +105,13 @@ const AnimatedPage = () => {
         <motion.h2 variants={mainContent} className="blue">
           PO-33 AR Guide
         </motion.h2>
+        <motion.div
+          className="header-image"
+          variants={imageAnimation}
+          transition="transition"
+        >
+          <Img fluid={props.data.imageOne.childImageSharp.fluid} alt="" />
+        </motion.div>
         <motion.div
           className="details"
           initial="initial"
@@ -108,7 +134,7 @@ const AnimatedPage = () => {
             Service: UX Design & Development
           </motion.p>
         </motion.div>
-        <img src="https://picsum.photos/750/400" alt="" />
+
         <motion.p variants={mainContent}>
           For my graduation project at the University of Applied Arts I’ve took
           on the challenge to develop an AR guide for the famous Pocket operator
@@ -137,9 +163,10 @@ const AnimatedPage = () => {
         >
           <motion.h3 className="blue">User & User Journey</motion.h3>
           <motion.h4 className="grey">Target Audience</motion.h4>
-          <figure>
-            <img src="https://picsum.photos/640/360" alt="" />
-          </figure>
+          <div className="persona-container">
+            <Img fluid={props.data.imageThree.childImageSharp.fluid} alt="" />
+            <Img fluid={props.data.imageFour.childImageSharp.fluid} alt="" />
+          </div>
           <p>
             These personas would be most likely to be interested in a solution
             like this. They enjoy learning new stuff and are familiar with
@@ -161,58 +188,78 @@ const AnimatedPage = () => {
             watching a Youtube video, or reading the manual. This User Journey
             shows the current situation when receiving the PO.
           </p>
-          <p>To provide some context this is how a user would recieve te PO</p>
-          <video
-            width="250px"
-            height="250px"
-            src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/bd355ec1-d079-45b1-8843-b169b40051a5/Screen_Recording_2020-04-27_at_09.45.47.mov?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200926%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200926T110227Z&X-Amz-Expires=86400&X-Amz-Signature=22da42b6227486079fd7226e4260d7d0ec69b474bb1c5be66ac82f26ed0c16e5&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen_Recording_2020-04-27_at_09.45.47.mov%22"
-          ></video>
+          <p>
+            To provide some context this is how a user would recieve te PO
+            videos comes soon
+          </p>
+
           <h4>Without AR Guide</h4>
-          <img src="https://picsum.photos/640/360" alt="" />
+          <div className="user-journey">
+            <Img fluid={props.data.imageTwo.childImageSharp.fluid} alt="" />
+          </div>
 
           <h4>Findings</h4>
-          <ul>
-            <li>
-              Instructions on the back of the PO are too short to actually get
-              started this results in confusion. And getting people to go look
-              for guides and tutorials
-            </li>
-            <li>
-              When finding a Youtube video most of the times there is no
-              information about what will be covered and when in the video
-            </li>
-            <li>
-              When the user stops using the PO for a while you want to quickly
-              get started again I think the AR guide could be something people
-              want to come back to. Just to quickly see how to, for example,
-              record drum sounds
-            </li>
-          </ul>
+          <div className="findings">
+            <ul>
+              <li>
+                <p>
+                  Instructions on the back of the PO are too short to actually
+                  get started this results in confusion. And getting people to
+                  go look for guides and tutorials
+                </p>
+              </li>
+              <li>
+                <p>
+                  When finding a Youtube video most of the times there is no
+                  information about what will be covered and when in the video
+                </p>
+              </li>
+              <li>
+                <p>
+                  When the user stops using the PO for a while you want to
+                  quickly get started again I think the AR guide could be
+                  something people want to come back to. Just to quickly see how
+                  to, for example, record drum sounds
+                </p>
+              </li>
+            </ul>
+          </div>
           <h4>With AR Guide</h4>
-          <img src="https://picsum.photos/640/360" alt="" />
-
+          <div className="user-journey">
+            <Img fluid={props.data.imageFive.childImageSharp.fluid} alt="" />
+          </div>
           <h4>Differences & Improvements</h4>
-          <ul>
-            <li>Text "Try our new AR Guide" be placed on the package</li>
-            <li>
-              User starts to grab his phone and scans the AR glyph/tag rather
-              than just read the small instructions on the back of the PO
-            </li>
-            <li>
-              The AR guide shows him all the functionality that's needed to get
-              started. So no more browsing to Youtube, all the information
-              needed in one screen.{" "}
-            </li>
-            <li>
-              User gets rewarded with a sample pack and an option to continue to
-              the next lesson
-            </li>
-          </ul>
-
+          <div className="findings">
+            <ul>
+              <p>
+                <li>Text "Try our new AR Guide" be placed on the package</li>
+              </p>
+              <li>
+                <p>
+                  User starts to grab his phone and scans the AR glyph/tag
+                  rather than just read the small instructions on the back of
+                  the PO
+                </p>
+              </li>
+              <li>
+                <p>
+                  The AR guide shows him all the functionality that's needed to
+                  get started. So no more browsing to Youtube, all the
+                  information needed in one screen.
+                </p>
+              </li>
+              <li>
+                <p>
+                  User gets rewarded with a sample pack and an option to
+                  continue to the next lesson
+                </p>
+              </li>
+            </ul>
+          </div>
           <h4>Design Challenge:</h4>
           <h3>
             How could an AR application educate musicians about the PO in a fun
-            and playful way?
+            and playful way
           </h3>
         </motion.section>
         <motion.section
@@ -236,7 +283,19 @@ const AnimatedPage = () => {
             view, where al the functions are mapped on top of the device. I did
             not continue to develop this but focus on the introduction.
           </p>
-          <motion.h4 className="blue">Early concept: Walkthrough</motion.h4>
+          <div className="prototyping-gifs">
+            <img
+              className="gif-1"
+              src={prototypegif1}
+              alt="A Gif showing the guided view"
+            />
+            <img
+              className="gif-2"
+              src={prototypegif2}
+              alt="A Gif showing the guided view"
+            />
+          </div>
+          <motion.h4 className="blue">Early concept: Introduction</motion.h4>
           <motion.p>
             This early prototype was build using Torch.io which allowed simple
             interaction. This was of course not perfect because it lacked many
@@ -257,17 +316,40 @@ const AnimatedPage = () => {
           </motion.p>
           <motion.h4>Prototyping V2</motion.h4>
           <p>
-            In thise protype I've tried to create a better connection with the
-            device. Using AR hands to show the user what to do
+            In this protype I've tried to create a better connection with the
+            device. Using AR hands to show the user what to do. Also sketched
+            out the idea of using a phone holder.
           </p>
-          <motion.img
-            width="300px"
-            height="250px"
-            src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0250cf47-9a6f-4870-a1d5-69afae83bb96/interactions-sektch.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200926%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200926T112848Z&X-Amz-Expires=86400&X-Amz-Signature=67240ee81f945a31c4786fa421599325e20b0902d1087bcb4af7331c4dc09fd7&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22interactions-sektch.png%22"
-            alt=""
-          />
+          <div className="phone-holder">
+            <div className="phone-holder-item">
+              <Img
+                fluid={props.data.imageSix.childImageSharp.fluid}
+                alt="sketch of a phoneholder"
+              />
+            </div>
+            <div className="phone-holder-item">
+              <Img
+                fluid={props.data.imageSeven.childImageSharp.fluid}
+                alt="sketch of the ar interaction"
+              />
+            </div>
+          </div>
+
           <h3>Interaction Design</h3>
-          <div className="image-container-figma"></div>
+          <div className="image-container-figma">
+            <div className="figma-item">
+              <Img
+                fluid={props.data.imageEight.childImageSharp.fluid}
+                alt="Figma prototype showing interaction"
+              />
+            </div>
+            <div className="figma-item">
+              <Img
+                fluid={props.data.imageNine.childImageSharp.fluid}
+                alt="Figma prototype showing interaction"
+              />
+            </div>
+          </div>
           <motion.h4>Testing</motion.h4>
           <p>
             Stake holder was postitive about this concept, but how to continue
@@ -317,33 +399,46 @@ const AnimatedPage = () => {
 
 //Page query
 
+export const fluidImage = graphql`
+  fragment fluidImage on File {
+    childImageSharp {
+      fluid(maxWidth: 1200) {
+        ...GatsbyImageSharpFluid
+      }
+      fixed(width: 100) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+`
+
 export const pageQuery = graphql`
   query {
-    imageOne: file(relativePath: { eq: "po-33.png" }) {
+    imageOne: file(relativePath: { eq: "case-1/po-33.png" }) {
       ...fluidImage
     }
-    imageTwo: file(relativePath: { eq: "user-journey-wo.png" }) {
+    imageTwo: file(relativePath: { eq: "case-1/User-Journey-WO.png" }) {
       ...fluidImage
     }
-    imageThree: file(relativePath: { eq: "user-journey-w.png" }) {
+    imageThree: file(relativePath: { eq: "case-1/Chris.png" }) {
       ...fluidImage
     }
-    imageFour: file(relativePath: { eq: "phoneholder.png" }) {
+    imageFour: file(relativePath: { eq: "case-1/Alexandra.png" }) {
       ...fluidImage
     }
-    imageFive: file(relativePath: { eq: "prototype-1.png" }) {
+    imageFive: file(relativePath: { eq: "case-1/User-Journey-W.png" }) {
       ...fluidImage
     }
-    imageSix: file(relativePath: { eq: "prototype-2.png" }) {
+    imageSix: file(relativePath: { eq: "case-1/interaction-sketch.png" }) {
       ...fluidImage
     }
-    imageSeven: file(relativePath: { eq: "early-sketch-1.png" }) {
+    imageSeven: file(relativePath: { eq: "case-1/phoneholder-4.png" }) {
       ...fluidImage
     }
-    imageEight: file(relativePath: { eq: "early-sketch-2.png" }) {
+    imageEight: file(relativePath: { eq: "case-1/interaction-1.png" }) {
       ...fluidImage
     }
-    imageNine: file(relativePath: { eq: "early-sketch-3.png" }) {
+    imageNine: file(relativePath: { eq: "case-1/interaction-2.png" }) {
       ...fluidImage
     }
   }
