@@ -9,7 +9,6 @@ import Work from '../components/Work'
 //Hooks
 import UseMousePosition from '../hooks/getMousePosition'
 
-
 // const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }
 
 const Home = () => {

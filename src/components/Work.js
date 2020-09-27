@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react"
-import { useAnimation, motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
+import React, { useEffect, useState } from 'react'
+import { useAnimation, motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
-import image1 from "../images/ar-guide.png"
+import image1 from '../images/ar-guide.png'
 
 const transition = { duration: 8.8, ease: [0.6, -0.05, 0.01, 0.9] }
 
 //Variants
-
-
 
 const titleShowUp = {
   initial: { y: 200 },
@@ -21,13 +19,13 @@ const Work = (x, y) => {
   const [contentRef, inView] = useInView({
     triggerOnce: true,
     root: null,
-    rootMargin: "-100px",
+    rootMargin: '-100px',
   })
 
   //By default inView is false when its set to true it will fire of the useeffect
   useEffect(() => {
     if (inView) {
-      animation.start("visible")
+      animation.start('visible')
     }
   }, [animation, inView])
 
@@ -74,7 +72,7 @@ const Work = (x, y) => {
               x: x,
               y: y,
             }}
-            transition={{ ease: "linear" }}
+            transition={{ ease: 'linear' }}
           >
             <img src={image1} alt="" />
           </motion.div>
@@ -166,7 +164,7 @@ const Work = (x, y) => {
           >
             <h4 class="grey">Spatial Valley</h4>
             <div className="desc">
-              {" "}
+              {' '}
               <p>floating text</p>
             </div>
           </motion.div>

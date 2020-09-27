@@ -1,12 +1,12 @@
-import React from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import Header from "./Header"
+import React from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import Header from './Header'
 
 //Styles
-import "../styles/main.scss"
+import '../styles/main.scss'
 
 //Hooks
-import UseMousePosition from "../hooks/getMousePosition"
+import UseMousePosition from '../hooks/getMousePosition'
 
 const duration = 0.6
 
@@ -19,7 +19,7 @@ const variants = {
     transition: {
       duration: duration,
       delay: duration,
-      when: "beforeChildren",
+      when: 'beforeChildren',
     },
   },
   exit: {
@@ -29,7 +29,7 @@ const variants = {
 }
 //Hook call
 
-const isSSR = typeof window === "undefined"
+const isSSR = typeof window === 'undefined'
 
 const Layout = ({ children, location }) => {
   const { x, y } = UseMousePosition()
