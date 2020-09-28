@@ -5,6 +5,7 @@ import { useAnimation } from 'framer-motion'
 import Shapes from '../components/Shapes'
 import Intro from '../components/Intro'
 import Work from '../components/Work'
+import Worknew from '../components/Work-new'
 
 //Hooks
 import UseMousePosition from '../hooks/getMousePosition'
@@ -31,7 +32,8 @@ const Home = () => {
     <>
       {!isSSR && <Shapes />}
       {!isSSR && <Intro />}
-      {!isSSR && <Work />}
+      {/* {!isSSR && <Work />} */}
+      <Worknew />
       {/* <Music /> */}
     </>
   )

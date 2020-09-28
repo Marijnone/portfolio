@@ -60,7 +60,7 @@ const Work = (x, y) => {
           },
         }}
       >
-        Work
+        <h1>Work</h1>
       </motion.h2>
       <motion.div className="items">
         <div className="work-item-1">

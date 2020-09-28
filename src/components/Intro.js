@@ -48,12 +48,12 @@ export const letter = {
 export const subtitle = {
   initial: {
     opacity: 0,
-    y: 400,
+    y: 0,
   },
   animate: {
     opacity: 1,
-    y: 0,
-    transition: { delay: 2, duration: 1.2, ...transition },
+    y: 40,
+    transition: { delay: 1.9, duration: 2.6, ...transition },
   },
 }
 
@@ -121,9 +121,9 @@ const Intro = () => {
             <motion.span variants={letter}>r</motion.span>
           </motion.span>
         </motion.span>
-        <motion.h3 variants={subtitle} className="sub-title">
+        <motion.h4 variants={subtitle} className="grey">
           Currently looking for a job as a UX Designer
-        </motion.h3>
+        </motion.h4>
       </motion.div>
     </motion.section>
   )

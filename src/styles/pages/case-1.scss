@@ -57,18 +57,6 @@ img * {
     margin-bottom: 24px;
   }
 
-  // .sketch {
-  //   @media screen and (max-width: $mobile-small) {
-  //     grid-template-columns: 1fr;
-  //   }
-  //   display: grid;
-  //   // grid-template-columns: repeat(3, 1fr);
-  //   place-content: start;
-  //   grid-template-columns: repeat(3, 1fr);
-  //   grid-template-rows: 1 auto;
-  //   gap: 1em;
-  //   margin-bottom: 51px;
-  // }
   .fp {
     display: grid;
     grid-column: 2 / 12;
@@ -123,7 +111,7 @@ img * {
     justify-content: center;
     gap: 24px;
 
-    @media screen and (max-width: $tablet-medium) {
+    @media screen and (max-width: $desktop-small) {
       display: grid;
       grid-template-columns: 1fr;
       grid-column: unset;
@@ -140,19 +128,42 @@ img * {
     gap: 1em;
     margin-bottom: 51px;
 
-    .ar-interaction-1 {
-      grid-column: 2 / 3;
-      box-shadow: $grey-shadow;
-    }
-    .ar-interaction-2 {
-      grid-column: 3 / 4;
-      box-shadow: $grey-shadow;
-    }
     @media screen and (max-width: $tablet-medium) {
       display: flex;
       flex-direction: column;
     }
   }
+
+  .image-container-ui {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    margin-bottom: 51px;
+    
+    .image-text {
+      align-self: center;
+    }
+
+    img {
+      max-width: 100%;
+    }
+    .image-item {
+      display: flex;
+    }
+
+ 
+
+    @media screen and (max-width: $tablet-medium) {
+      display: flex;
+      flex-direction: column;
+      gap: 1px
+
+      img {
+        max-width: 100%;
+       }
+    }
+  }
+
   .hi-fi {
     display: grid;
 

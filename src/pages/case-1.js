@@ -9,6 +9,9 @@ import '../styles/pages/case-1.scss'
 //Gifs
 import prototypegif1 from '../images/case-1/gifs/prototype2.gif'
 import prototypegif2 from '../images/case-1/gifs/prototype3.gif'
+import prototypegif3 from '../images/case-1/gifs/Phoneholder-GIF.gif'
+import prototypegif4 from '../images/case-1/gifs/Slider-GIF.gif'
+import prototypegif5 from '../images/case-1/gifs/Tracking-GIF.gif'
 
 const transition = { duration: 1.4, ease: [0.6, 0.05, -0.01, 0.9] }
 
@@ -102,9 +105,9 @@ const AnimatedPage = (props) => {
   return (
     <motion.section variants={container} className="grid-container-case">
       <article className="fp">
-        <motion.h2 variants={mainContent} className="blue">
+        <motion.h1 variants={mainContent} className="blue">
           PO-33 AR Guide
-        </motion.h2>
+        </motion.h1>
         <motion.div
           className="header-image"
           variants={imageAnimation}
@@ -142,9 +145,9 @@ const AnimatedPage = (props) => {
           Design. But in the process I realized this could not be archieved
           without propper prototyping in actual space.
         </motion.p>
-        <motion.h3 variants={mainContent} className="blue">
+        <motion.h4 variants={mainContent} className="blue">
           Opportunity & Problem
-        </motion.h3>
+        </motion.h4>
         <p>
           Learning new studio gear always takes up a lot of time. You get
           excited to try it out and with a little experience, you can get
@@ -161,8 +164,8 @@ const AnimatedPage = (props) => {
           // initial="hidden"
           // variants={showUp}
         >
-          <motion.h3 className="blue">User & User Journey</motion.h3>
-          <motion.h4 className="grey">Target Audience</motion.h4>
+          <motion.h4 className="blue">User & User Journey</motion.h4>
+          <motion.h5 className="grey">Target Audience</motion.h5>
           <div className="persona-container">
             <Img fluid={props.data.imageThree.childImageSharp.fluid} alt="" />
             <Img fluid={props.data.imageFour.childImageSharp.fluid} alt="" />
@@ -198,7 +201,7 @@ const AnimatedPage = (props) => {
             <Img fluid={props.data.imageTwo.childImageSharp.fluid} alt="" />
           </div>
 
-          <h4>Findings</h4>
+          <h5>Findings</h5>
           <div className="findings">
             <ul>
               <li>
@@ -228,7 +231,7 @@ const AnimatedPage = (props) => {
           <div className="user-journey">
             <Img fluid={props.data.imageFive.childImageSharp.fluid} alt="" />
           </div>
-          <h4>Differences & Improvements</h4>
+          <h5>Differences & Improvements</h5>
           <div className="findings">
             <ul>
               <p>
@@ -256,7 +259,7 @@ const AnimatedPage = (props) => {
               </li>
             </ul>
           </div>
-          <h4>Design Challenge:</h4>
+          <h4 className="black">Design Challenge:</h4>
           <h3>
             How could an AR application educate musicians about the PO in a fun
             and playful way
@@ -277,7 +280,7 @@ const AnimatedPage = (props) => {
             journey, from learning about 3D software to actual programming and
             of course a lot of sketching.
           </motion.p>
-          <motion.h4 className="blue">Early concept: Detailed view</motion.h4>
+          <motion.h4>Early concept: Detailed view</motion.h4>
           <p>
             The menu was for navigating to the lessons or showing the detailed
             view, where al the functions are mapped on top of the device. I did
@@ -295,7 +298,7 @@ const AnimatedPage = (props) => {
               alt="A Gif showing the guided view"
             />
           </div>
-          <motion.h4 className="blue">Early concept: Introduction</motion.h4>
+          <motion.h4>Early concept: Introduction</motion.h4>
           <motion.p>
             This early prototype was build using Torch.io which allowed simple
             interaction. This was of course not perfect because it lacked many
@@ -334,8 +337,11 @@ const AnimatedPage = (props) => {
               />
             </div>
           </div>
-
-          <h3>Interaction Design</h3>
+          <h4>Interaction Design</h4>
+          <p>
+            In this Figma prototype I wanted to communicate the idea of the PO
+            characther explaining what to do
+          </p>
           <div className="image-container-figma">
             <div className="figma-item">
               <Img
@@ -370,27 +376,116 @@ const AnimatedPage = (props) => {
           <p>
             I started off by sketching the new interaction and then I proceeded
             to Photoshop to make the 3D assets like letters or the hands. Then I
-            used sparkAR to place the object in the scene.
+            used sparkAR to place the object in the scene. I came up with a new
+            UI, using a slider seems perfect to step through the lessons.
           </p>
-
-          <h3>UI Design</h3>
+          {/* <div className="prototyping-container"></div> */}
+          /* <h4>UI Design</h4>
           <p>
             I started off by sketching the new interaction and then I proceeded
             to Photoshop to make the 3D assets like letters or the hands. Then I
             used sparkAR to place the object in the scene.
           </p>
-          <div className="image-container-ui"></div>
-
-          <h4>Final Prototype</h4>
-          <p>
-            This is the final prototype video where the full proof of concept
-            comes together. The phone is placed inside the phone holder. And the
-            user starts the interaction. I did a voice-over to better explain
-            whats going on
-          </p>
-          <div className="video-container">
-            <video src="null"></video>
+          <div className="image-container-ui">
+            <div className="image-text">
+              <h4>Slider</h4>
+              <p>
+                The buttons step through the slider and show the user what to
+                press
+              </p>
+            </div>
+            <div></div>
+            <div className="image-item">
+              <img
+                className="gif-3"
+                src={prototypegif4}
+                alt="A Gif showing the slider"
+              />
+            </div>
           </div>
+          <div className="image-container-ui">
+            <div className="image-item">
+              <img
+                className="gif-3"
+                src={prototypegif5}
+                alt="A Gif showing the slider"
+              />
+            </div>
+            <div></div>
+
+            <div className="image-text">
+              <h4>Tracking</h4>
+              <p>
+                During testing I've figured that It was not clear enough how
+                close you should point
+              </p>
+            </div>
+          </div>
+          <div className="image-container-ui">
+            <div className="image-text">
+              <h4>Phoneholder</h4>
+              <p>The complete interaction with the phoneholder.</p>
+            </div>
+            <div></div>
+            <div className="image-item">
+              <img
+                className="gif-3"
+                src={prototypegif3}
+                alt="A Gif showing the slider"
+              />
+            </div>
+          </div>
+          <h3 className="blue">Findings & Lessons</h3>
+          <h4>Verifying</h4>
+          <p>
+            Due to Covid-19 I could not test this and needed to verify this
+            through Facebook communities dedicated towards pocket operators. The
+            feedback was very positive people liked the idea of learning a
+            device like this. I've also verified this with music producers who
+            were also positive about a solution like this. mentioning the
+            possible capabilities of learning and making music with AR.
+          </p>
+          <p>
+            The stakeholder was also very posstive about the result, and stated
+            that from this point we as a company want to see how we could in the
+            near future implement solutions like this. Next step would be to
+            research If people tend to learn easier with AR or without that was
+            something out of the scope of this project
+          </p>
+          <h4>Insights current prototype</h4>
+          <ul>
+            <li>
+              <p>People think learning like this is easier</p>
+            </li>
+            <li>
+              <p>Text is not readable enough</p>
+            </li>
+            <li>
+              <p>
+                Considering a better visual hierachy for the steps, different
+                color per step
+              </p>
+            </li>
+            <li>
+              <p>
+                The sound playing is distracting this should only be playing in
+                the "main" menu
+              </p>
+            </li>
+          </ul>
+          <h3 className="blue">Conclusion</h3>
+          <p>
+            Starting this project I spotted an opportunity, I wanted to enhance
+            the musicians experience using AR. The current proof of concept
+            shows many possibilities of how AR can help to learn people new
+            things. I'm very happy with what I've achieved even with the lack of
+            being able to the actual test the proof of concept. By asking the
+            right people I've validated that this type of application would work
+            and is very promising in learning people new things. For me, jumping
+            on this with no prior knowledge about AR was sometimes scary and
+            very uncertain but dealing with this resulted in learning tons of
+            new stuff.
+          </p>
         </motion.section>
       </article>
     </motion.section>
@@ -439,6 +534,15 @@ export const pageQuery = graphql`
       ...fluidImage
     }
     imageNine: file(relativePath: { eq: "case-1/interaction-2.png" }) {
+      ...fluidImage
+    }
+    imageTen: file(relativePath: { eq: "case-1/sparkAR-1.png" }) {
+      ...fluidImage
+    }
+    imageEleven: file(relativePath: { eq: "case-1/sparkAR-2.png" }) {
+      ...fluidImage
+    }
+    imageTwelve: file(relativePath: { eq: "case-1/sparkAR-3.png" }) {
       ...fluidImage
     }
   }

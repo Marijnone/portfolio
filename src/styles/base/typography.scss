@@ -1,6 +1,7 @@
-h2 {
-  font-size: 86px;
+h1 {
+  font-size: 80px;
   font-family: Mint Grotesk;
+  line-height: 72px;
   font-weight: 900;
   margin-bottom: 12px;
 
@@ -31,13 +32,41 @@ h2 {
   // padding-top: 58px;
 }
 
+h2 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 72px;
+  color: $black;
+  margin-bottom: 12px;
+
+  @media screen and (max-width: $desktop-medium) {
+    font-size: 58px;
+    line-height: 64px;
+  }
+
+  @media screen and (max-width: $tablet-medium) {
+    font-size: 48px;
+    line-height: 48px;
+    margin-bottom: 8px;
+  }
+
+  @media screen and (max-width: $mobile-large) {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  @media screen and (max-width: $mobile-medium) {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
 h3 {
-  font-size: 36px;
+  font-size: 60px;
   font-family: Mint Grotesk;
   line-height: 1;
   font-weight: 700;
   color: $shadow-grey;
-  margin-bottom: 26px;
+  margin-bottom: 16px;
 
   &.blue {
     color: $special-blue;
@@ -48,46 +77,79 @@ h3 {
   }
 
   @media screen and (max-width: $desktop-small) {
-    font-size: 32px;
+    font-size: 52px;
   }
 
   @media screen and (max-width: $tablet-medium) {
-    font-size: 32px;
+    font-size: 40px;
     margin-bottom: 12px;
   }
 
   @media screen and (max-width: $mobile-large) {
-    font-size: 24px;
+    font-size: 32px;
     line-height: 36px;
     margin-bottom: 8px;
   }
 
   @media screen and (max-width: $mobile-medium) {
-    font-size: 24px;
+    font-size: 28px;
     line-height: 30px;
   }
 }
 
 h4 {
-  font-size: 32px;
+  font-size: 36px;
   font-family: Mint Grotesk;
   font-weight: 700;
-  margin-bottom: 24px;
+  line-height: 40px;
+  margin-bottom: 16px;
 
   @media screen and (max-width: $tablet-small) {
     font-size: 18px;
-    line-height: 30px;
-    margin-bottom: 24px;
+    line-height: 22px;
+    margin-bottom: 8px;
   }
   @media screen and (max-width: $tablet-medium) {
-    font-size: 19px;
-    line-height: 30px;
+    font-size: 28px;
+    line-height: 32px;
     margin-bottom: 12px;
   }
-
+  @media screen and (max-width: $mobile-large) {
+    font-size: 22px;
+    line-height: 26px;
+  }
 
   &.grey {
     color: $shadow-grey;
+  }
+  &.blue {
+    color: $special-blue;
+  }
+}
+
+h5 {
+  font-family: Mint Grotesk;
+  font-size: 32px;
+  font-weight: 700;
+  color: $black;
+  line-height: 36px;
+
+  &.grey {
+    color: $shadow-grey;
+  }
+
+  @media screen and (max-width: $desktop-small) {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  @media screen and (max-width: $tablet-medium) {
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: $mobile-large) {
+    font-size: 18px;
+    line-height: 28px;
   }
 }
 
