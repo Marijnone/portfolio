@@ -20,7 +20,7 @@ const WorkItems = () => {
                   </div>
                   <div className="title">
                     <h2>
-                      <div className="text">Spark AR Guide</div>
+                      <div className="text"><h2>Spark AR Guide</h2></div>
                     </h2>
                   </div>
                   <div className="floating-image">

@@ -66,6 +66,8 @@ const Work = (x, y) => {
         <div className="work-item-1">
           <motion.div
             className="floating-image"
+            onHoverStart={() => setHoverState(true)}
+            onHoverEnd={() => setHoverState(false)}
             initial={{ opacity: 0 }}
             animate={{
               opacity: hoverState ? 1 : 0,
@@ -77,8 +79,9 @@ const Work = (x, y) => {
             <img src={image1} alt="" />
           </motion.div>
           <motion.svg
-            onHoverStart={() => setHoverState(true)}
-            onHoverEnd={() => setHoverState(false)}
+            drag="x"
+            dragConstraints={{ left: 12, right: 12, top: 12, bottom: 12 }}
+            dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
             width="440"
             height="398"
             viewBox="0 0 440 398"
@@ -87,7 +90,13 @@ const Work = (x, y) => {
           >
             <a href="/case-1">
               <circle cx="241" cy="199" r="199" fill="#C4C4C4" />
-              <circle cx="199" cy="199" r="199" fill="#B1FCEB" />
+              <circle
+                cx="199"
+                cy="199"
+                r="199"
+                fill="#0C3DEE"
+                fill-opacity="0.93"
+              />
             </a>
           </motion.svg>
           <motion.div
