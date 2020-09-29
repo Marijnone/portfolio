@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react"
-import { useAnimation, motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
+import React, { useEffect, useState } from 'react'
+import { useAnimation, motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
-import image1 from "../images/ar-guide.png"
+import image1 from '../images/ar-guide.png'
 
 const transition = { duration: 8.8, ease: [0.6, -0.05, 0.01, 0.9] }
 
@@ -19,13 +19,13 @@ const Work = (x, y) => {
   const [contentRef, inView] = useInView({
     triggerOnce: true,
     root: null,
-    rootMargin: "-100px",
+    rootMargin: '-100px',
   })
 
   //By default inView is false when its set to true it will fire of the useeffect
   useEffect(() => {
     if (inView) {
-      animation.start("visible")
+      animation.start('visible')
     }
   }, [animation, inView])
 
@@ -60,24 +60,28 @@ const Work = (x, y) => {
           },
         }}
       >
-        Work
+        <h1>Work</h1>
       </motion.h2>
       <motion.div className="items">
         <div className="work-item-1">
           <motion.div
             className="floating-image"
+            onHoverStart={() => setHoverState(true)}
+            onHoverEnd={() => setHoverState(false)}
             initial={{ opacity: 0 }}
             animate={{
               opacity: hoverState ? 1 : 0,
               x: x,
               y: y,
             }}
+            transition={{ ease: 'linear' }}
           >
             <img src={image1} alt="" />
           </motion.div>
           <motion.svg
-            onHoverStart={() => setHoverState(true)}
-            onHoverEnd={() => setHoverState(false)}
+            drag="x"
+            dragConstraints={{ left: 12, right: 12, top: 12, bottom: 12 }}
+            dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
             width="440"
             height="398"
             viewBox="0 0 440 398"
@@ -86,7 +90,13 @@ const Work = (x, y) => {
           >
             <a href="/case-1">
               <circle cx="241" cy="199" r="199" fill="#C4C4C4" />
-              <circle cx="199" cy="199" r="199" fill="#B1FCEB" />
+              <circle
+                cx="199"
+                cy="199"
+                r="199"
+                fill="#0C3DEE"
+                fill-opacity="0.93"
+              />
             </a>
           </motion.svg>
           <motion.div
@@ -110,7 +120,13 @@ const Work = (x, y) => {
             }}
             className="title"
           >
-            <h4 class="grey">AR Guide</h4>
+            <motion.h4
+              className="grey"
+              onHoverStart={() => setHoverState(true)}
+              onHoverEnd={() => setHoverState(false)}
+            >
+              AR Guide
+            </motion.h4>
             <div className="desc">
               <p>client:</p>
             </div>
@@ -157,7 +173,7 @@ const Work = (x, y) => {
           >
             <h4 class="grey">Spatial Valley</h4>
             <div className="desc">
-              {" "}
+              {' '}
               <p>floating text</p>
             </div>
           </motion.div>
