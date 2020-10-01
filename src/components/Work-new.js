@@ -12,8 +12,7 @@ const projectTitles = ["Spark AR Guide", "Spatial valley", "Spark AR Guide"]
 
 const WorkItems = () => {
   const [hoverState, setHoverState] = useState()
-  const [mouseStateX, setMouseStateX] = useState()
-  const [mouseStateY, setMouseStateY] = useState()
+  const [mouseState, setMouseState] = useState()
   const animation = useAnimation()
   
   useEffect(() => {
@@ -22,18 +21,17 @@ const WorkItems = () => {
       window.addEventListener('mousemove', handlePosition)
       isListenerSet = true
     }
-  },[hoverState])
+  })
   // console.log(x, y);
 
   function handlePosition(e) {
-    console.log(e.clientX)
-    setMouseStateX(e.clientX)
-    setMouseStateY(e.clientY)
+    // console.log(e.clientX)
+    setMouseState(e.clientX)
   }
 
   return (
     <section className="work-items">
-      <h1>{ mouseStateX }</h1>
+      <h1>{ mouseState }</h1>
       <ul className="menu-inner">
         {projectTitles.map((item, index) => {
           return (
@@ -54,8 +52,7 @@ const WorkItems = () => {
                   initial={{ opacity: 0 }}
                   animate={{
                     opacity: hoverState === index ? 1 : 0,
-                    x: mouseStateX,
-                    y: mouseStateY
+                    // x: x,
                     // y: y,
                   }}
                   transition={{ ease: "linear" }}
