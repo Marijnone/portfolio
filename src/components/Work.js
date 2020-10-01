@@ -233,3 +233,45 @@ const Work = (x, y) => {
   )
 }
 export default Work
+
+
+
+<li>
+<Link to={"/case-1"}>
+  <div className="line left" />
+  <motion.h2
+    className="title"
+    onHoverStart={() => setHoverState(true)}
+    onHoverEnd={() => setHoverState(false)}
+  >
+    <span className="text">Spark AR...</span>
+  </motion.h2>
+  <div className="line right"></div>
+
+  <motion.div
+    className="floating-image"
+    initial={{ opacity: 0 }}
+    animate={{
+      opacity: hoverState ? 1 : 0,
+      x: x,
+      y: y,
+    }}
+    transition={{ ease: "linear" }}
+  >
+    <img src={image1} alt="" />
+  </motion.div>
+</Link>
+</li>
+<li>
+<Link to={"/case-1"}>
+  <div className="line left" />
+  <h2 className="title">
+    <span className="text">Spark AR Guide</span>
+  </h2>
+  <div className="line right"></div>
+
+  <div className="floating-image">
+    {/* <img src={image1} alt="" /> */}
+  </div>
+</Link>
+</li>

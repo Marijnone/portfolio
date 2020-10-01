@@ -50,7 +50,7 @@ function Parallax() {
           onMouseMove={function (event) {
             let offsetX = event.clientX - window.innerWidth / 4
             let offsetY = event.clientY - window.innerWidth / 2
-            console.log(offsetX, offsetY)
+            // console.log(offsetX, offsetY)
             // bgAnimate.start({ x: offsetX / 40, y: offsetY / 40 });
             // starAAnimate.start({ x: offsetX / 2, y: offsetY / 32 });
             shape1Animate.start({ x: offsetX / 8, y: offsetY / 2 })
