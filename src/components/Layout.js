@@ -32,13 +32,13 @@ const variants = {
 const isSSR = typeof window === 'undefined'
 
 const Layout = ({ children, location }) => {
-  // const { x, y } = UseMousePosition()
+  const { x, y } = UseMousePosition()
   return (
     <>
-      <Header/>
+      <Header />
       <div className="layout-container">
         {!isSSR && (
-          <AnimatePresence >
+          <AnimatePresence>
             <motion.main
               key={window.location}
               variants={variants}
@@ -47,7 +47,6 @@ const Layout = ({ children, location }) => {
               exit="exit"
             >
               {children}
-              
             </motion.main>
             {/* <motion.div //custom cursor
               animate={{

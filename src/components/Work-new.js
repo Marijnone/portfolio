@@ -13,6 +13,8 @@ const projectTitles = ["Spark AR Guide", "Spatial valley", "Spark AR Guide"]
 const WorkItems = () => {
   const [hoverState, setHoverState] = useState()
   const [mouseState, setMouseState] = useState()
+  const [mouseXState, setMouseXState] = useState()
+  const [mouseYState, setMouseYState] = useState()
   const animation = useAnimation()
   
   useEffect(() => {
@@ -25,8 +27,9 @@ const WorkItems = () => {
   // console.log(x, y);
 
   function handlePosition(e) {
-    // console.log(e.clientX)
-    setMouseState(e.clientX)
+    console.log(e.clientX)
+    setMouseXState(e.clientX)
+    setMouseYState(e.clientY)
   }
 
   return (
@@ -52,8 +55,8 @@ const WorkItems = () => {
                   initial={{ opacity: 0 }}
                   animate={{
                     opacity: hoverState === index ? 1 : 0,
-                    // x: x,
-                    // y: y,
+                    x: mouseXState,
+                    y: mouseYState,
                   }}
                   transition={{ ease: "linear" }}
                 >

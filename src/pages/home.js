@@ -13,7 +13,7 @@ import UseMousePosition from '../hooks/getMousePosition'
 // const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }
 
 const Home = () => {
-  // const { x, y } = UseMousePosition()
+  const { x, y } = UseMousePosition()
   const animation = useAnimation()
   const [contentRef, inView] = useInView({
     triggerOnce: true,
@@ -30,10 +30,10 @@ const Home = () => {
   }, [animation, inView])
   return (
     <>
-      {/* {!isSSR && <Shapes />} */}
+      {!isSSR && <Shapes />}
       {!isSSR && <Intro />}
-      {/* {!isSSR && <Work />} */}
-      <Worknew />
+      {!isSSR && <Work />}
+      {/* <Worknew /> */}
       {/* <Music /> */}
     </>
   )
