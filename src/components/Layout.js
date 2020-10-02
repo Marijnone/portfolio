@@ -32,7 +32,7 @@ const variants = {
 const isSSR = typeof window === 'undefined'
 
 const Layout = ({ children, location }) => {
-  const { x, y } = UseMousePosition()
+  
   return (
     <>
       <Header />

@@ -34,7 +34,7 @@ const WorkItems = () => {
 
   return (
     <section className="work-items">
-      <h1>{ mouseState }</h1>
+      <h1>{ mouseXState }</h1>
       <ul className="menu-inner">
         {projectTitles.map((item, index) => {
           return (
