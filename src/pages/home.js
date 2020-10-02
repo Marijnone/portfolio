@@ -29,7 +29,7 @@ const Home = () => {
   // }, [animation, inView])
   return (
     <>
-      {!isSSR && <Shapes />}
+      {/* {!isSSR && <Shapes />} */}
       {!isSSR && <Intro />}
       {/* {!isSSR && <Work />} */}
       <Worknew />
