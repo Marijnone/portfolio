@@ -15,32 +15,76 @@ const transition = { duration: 0.8, ease: [0.6, -0.5, 0.01, 0.9] }
 
 //Variants {
 const titleSlideUp = {
-  initial: { y: 200, opacity: 0 },
+  initial: { y: 72, opacity: 0 },
   animate: { y: 0, opacity: 1 },
 }
 
 const parent = {
   animate: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
       delayChildren: 0.4,
     },
   },
 }
 
+const showUp = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {when:"afterChildren", staggerChildren: 0.1 , delayChildren: 0.4, duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] },
+  },
+  hidden: {
+    opacity: 0,
+    y: 72,
+  },
+}
+
+
+const maskAnimation = {
+  initial: { width: "100%" },
+  animate: { width: 0 },
+}
+
+// const showUp = {
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: { duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] },
+//   },
+//   hidden: {
+//     opacity: 0,
+//     y: 72,
+//   },
+// }
+
 const WorkItems = () => {
-  const [hoverState, setHoverState] = useState()
-  const [mouseState, setMouseState] = useState()
-  const [mouseXState, setMouseXState] = useState()
-  const [mouseYState, setMouseYState] = useState()
-
-  const [workPosition, setWorkPosition] = useState({
-    top: 0,
-    left: 0,
-  })
-
   const animation = useAnimation()
+ 
+  const [contentRef, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-100px",
+  })
+  const [hoverState, setHoverState] = useState()
+  // const [mouseXState, setMouseXState] = useState()
+  // const [mouseYState, setMouseYState] = useState()
+
+  // const [workPosition, setWorkPosition] = useState({
+  //   top: 0,
+  //   left: 0,
+  // })
+
+  //HOOKS
+
   const work = useRef()
+
+  useEffect(() => {
+    if (inView) {
+      animation.start("visible")
+      animation.start("animate")
+      // animation.start("initial")
+    }
+  }, [animation, inView])
 
   // useEffect(() => {
   //   console.log("useeffect")
@@ -64,30 +108,46 @@ const WorkItems = () => {
   // }, [hoverState])
 
   return (
-    <section className="work-items">
-      <h1>{mouseXState}</h1>
+    <motion.section className="work-items">
+      <h1>Work</h1>
       <motion.ul
-        className="menu-inner"
-        initial="initial"
-        animate="animate"
+        ref={contentRef}
+        animate={animation}
+        initial="hidden"
         exit="exit"
-        variants={parent}
+        variants={showUp}
+        className="menu-inner"
       >
         {projectTitles.map((item, index) => {
           return (
-            <motion.li ref={work} key={index}>
+            <motion.li key={index}>
               <Link to={`/case-${index + 1}`}>
-                <div className="line left" />
+                <div className="line left">
+                  <motion.div
+                    animate={animation}
+                    className="mask left"
+                    variants={maskAnimation}
+                    transition={{ ...transition, duration: 1 }}
+                  />
+                </div>
                 <motion.h2
                   variants={titleSlideUp}
                   transition={transition}
                   className="title"
+                  animate={animation}
                   // onHoverStart={() => setHoverState(index)}
                   // onHoverEnd={() => setHoverState(false)}
                 >
                   <span className="text">{item}</span>
                 </motion.h2>
-                <div className="line right"></div>
+                <div className="line right">
+                  <motion.div
+                    className="mask right"
+                    animate={animation}
+                    variants={maskAnimation}
+                    transition={{ ...transition, duration: 1 }}
+                  />
+                </div>
               </Link>
               <motion.div
                 className="floating-image"
@@ -107,7 +167,7 @@ const WorkItems = () => {
           )
         })}
       </motion.ul>
-    </section>
+    </motion.section>
   )
 }
 

@@ -6,7 +6,6 @@ import Header from './Header'
 import '../styles/main.scss'
 
 //Hooks
-import UseMousePosition from '../hooks/getMousePosition'
 
 const duration = 0.6
 
