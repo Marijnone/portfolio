@@ -27,6 +27,7 @@ const Shape2 = (props) => {
       width={220}
       borderRadius={250}
       center
+      left={600}
       backgroundColor={'#A499DC'}
       shadow={'0px 0px 40px rgba(0, 0, 0, 0.2)'}
       animate={props.animate}
