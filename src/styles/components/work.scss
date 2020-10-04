@@ -1,61 +1,3 @@
-// .work {
-//     display: grid;
-//     height: 90vh;
-//     // margin-bottom: 62px;
-//     // @media screen and (max-width: $mobile-large) {
-//     //   grid-template-columns: 1fr;
-//     // }
-
-//     .work-item-1,
-//     .work-item-2,
-//     .work-item-3 {
-//       display: grid;
-//     }
-
-//     .floating-image {
-//       display: block;
-//       pointer-events: none;
-//       width: 50%;
-//       height: 50%;
-//       position: absolute;
-//       overflow: hidden;
-
-//       @media screen and (max-width: $tablet-small) {
-//         height: 250px;
-//         width: 350px;
-//       }
-//     }
-
-//     .items {
-//       display: grid;
-//     //   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-//       gap: 6px;
-
-//       svg {
-//         // height: 250px; temp disable
-//         width: 250px;
-//         display: grid;
-//         justify-self: center;
-
-//         @media screen and (max-width: $desktop-small) {
-//           height: 150px;
-//           width: 150px;
-//         }
-//       }
-//       .title {
-//         h4 {
-//           display: flex;
-//           align-items: flex-end;
-//           line-clamp: 1;
-//         }
-//         .desc {
-
-//         }
-//       }
-//     }
-//   }
-
-// `Work new
 
 .floating-image {
   position: absolute;
@@ -74,6 +16,9 @@
   li {
     padding-bottom: 30px;
     &:nth-child(1) {
+      h2 {
+        padding-top: 30px;
+      }
       .left {
         &:before,
         &:after {
@@ -120,7 +65,7 @@
 
   .line {
     position: relative;
-    height: 2px;
+    height: 4px;
     width: 100%;
     background: black;
 
@@ -129,8 +74,8 @@
       content: "";
       position: absolute;
       top: -2px;
-      height: 6px;
-      width: 6px;
+      height: 8px;
+      width: 8px;
       border-radius: 100%;
       background: $black;
     }
@@ -179,7 +124,11 @@
         }
 
         .line {
-          background: green;
+          background: $special-blue;
+          &:before,
+          &:after {
+            background: $special-blue;
+          }
         }
       }
 
@@ -191,11 +140,17 @@
         .right {
           flex: 0.4;
         }
+
         .line {
-          background: orange;
+          background: $special-light-blue;
 
           &.left {
             visibility: visible;
+          }
+
+          &:before,
+          &:after {
+            background: $special-light-blue;
           }
         }
       }
@@ -205,7 +160,12 @@
           flex: 0.2;
         }
         .line {
-          background: blue;
+          background: $special-purple;
+
+          &:before,
+          &:after {
+            background: $special-purple;
+          }
 
           &.left {
             visibility: visible;

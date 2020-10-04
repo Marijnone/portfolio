@@ -11,6 +11,7 @@
 @import "../styles/components/work.scss";
 @import "../styles/components/layout.scss";
 @import "../styles/components/custom_cursor.scss";
+@import "../styles/components/about.scss";
 
 
 
@@ -41,6 +42,7 @@ body {
   grid-row: 2 / 5;
   z-index: 10;
   grid-template-columns: repeat(auto-fill, 121px);
+  pointer-events: none;
 
   span {
     display: inline-block;

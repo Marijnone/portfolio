@@ -1,0 +1,10 @@
+.layout-container-about {
+    margin: 10% 0;
+  article {
+    padding: 52px 10%;
+    
+  }
+  p &:nth-child(1) {
+    padding: 6em;
+  }
+}

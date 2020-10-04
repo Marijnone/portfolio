@@ -32,7 +32,7 @@ const showUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {when:"afterChildren", staggerChildren: 0.1 , delayChildren: 0.4, duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] },
+    transition: {when:"beforeChildren", staggerChildren: 1.4 , delayChildren: 0.4, duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] },
   },
   hidden: {
     opacity: 0,
@@ -45,18 +45,6 @@ const maskAnimation = {
   initial: { width: "100%" },
   animate: { width: 0 },
 }
-
-// const showUp = {
-//   visible: {
-//     opacity: 1,
-//     y: 0,
-//     transition: { duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] },
-//   },
-//   hidden: {
-//     opacity: 0,
-//     y: 72,
-//   },
-// }
 
 const WorkItems = () => {
   const animation = useAnimation()
@@ -108,14 +96,19 @@ const WorkItems = () => {
   // }, [hoverState])
 
   return (
+    <>
+    <div className="layout-container">
+       <h1>Work</h1>
+    </div>
+
     <motion.section className="work-items">
-      <h1>Work</h1>
       <motion.ul
         ref={contentRef}
         animate={animation}
         initial="hidden"
         exit="exit"
         variants={showUp}
+        transition={{...transition}}
         className="menu-inner"
       >
         {projectTitles.map((item, index) => {
@@ -124,17 +117,16 @@ const WorkItems = () => {
               <Link to={`/case-${index + 1}`}>
                 <div className="line left">
                   <motion.div
-                    animate={animation}
-                    className="mask left"
                     variants={maskAnimation}
-                    transition={{ ...transition, duration: 1 }}
+                    transition={{ ...transition, duration: 2 }}
+                    className="mask left"
                   />
                 </div>
                 <motion.h2
                   variants={titleSlideUp}
                   transition={transition}
-                  className="title"
-                  animate={animation}
+           
+                  // className="title"
                   // onHoverStart={() => setHoverState(index)}
                   // onHoverEnd={() => setHoverState(false)}
                 >
@@ -142,10 +134,9 @@ const WorkItems = () => {
                 </motion.h2>
                 <div className="line right">
                   <motion.div
-                    className="mask right"
-                    animate={animation}
                     variants={maskAnimation}
-                    transition={{ ...transition, duration: 1 }}
+                    transition={{ ...transition, duration: 2 }}
+                    className="mask right"
                   />
                 </div>
               </Link>
@@ -168,6 +159,7 @@ const WorkItems = () => {
         })}
       </motion.ul>
     </motion.section>
+    </> 
   )
 }
 
