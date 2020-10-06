@@ -6,6 +6,7 @@
 
 //Pages
 @import "../styles/pages/case-1.scss";
+@import "../styles/pages/case-2.scss";
 
 //Components
 @import "../styles/components/work.scss";
@@ -124,6 +125,10 @@ span.span-prof-2:nth-child(1) > span:nth-child(9) {
     opacity: 1;
     // transform: translateY(500px);
   }
+}
+
+@keyframes Bounce  {
+
 }
 
 // Background shapes

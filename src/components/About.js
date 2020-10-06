@@ -6,7 +6,6 @@ const transition = { duration: 1.4, ease: [0.6, 0.05, -0.01, 0.9] }
 
 //Variants
 
-
 const showUp = {
   visible: {
     opacity: 1,
@@ -52,8 +51,8 @@ function About() {
 
       <motion.article>
         <motion.p variants={showUp} transition={transition}>
-          My name is Marijn Moviat, a Junior UX Designer. That knows how to code
-          recently graduated from The Bachelor Communication & Multimedia Design
+          My name is Marijn Moviat, a Junior UX Designer that knows how to code.
+          Recently graduated from The Bachelor Communication & Multimedia Design
           at the University of Applied Sciences in Amsterdam. I like to bring my
           technical knowledge to empower User Experience.
         </motion.p>
@@ -62,7 +61,8 @@ function About() {
           building products with Javascript, Node.js, React. Being an
           ever-learning designer I've realized that I enjoy optimizing UX a
           little more than coding 24/7. I'm always looking for new ways to solve
-          a problem and don't step back from a technical challenge.
+          a problem and don't step back from a technical challenge. Currently
+          I'm learning about Augmented Reality and UX.
         </motion.p>
         <motion.p variants={showUp}>
           When I'm not designing or coding, I'm making music under my lo-fi
@@ -71,7 +71,7 @@ function About() {
         <motion.p variants={showUp}>
           I'm currently looking for a UX adventure that takes me to the next
           level. Working with motivating and skilled people creating meaningful
-          experiences.
+          user experiences.
         </motion.p>
       </motion.article>
     </motion.section>
