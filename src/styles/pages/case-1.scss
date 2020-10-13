@@ -23,7 +23,7 @@ img * {
   }
 
   .persona-container {
-    margin: 52px auto;
+    margin: 32px auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
@@ -39,7 +39,7 @@ img * {
   .findings {
     ul {
       list-style-type: square;
-      padding: 0 80px;
+      padding: 10px 80px;
       li {
         margin-bottom: 26px;
       }
@@ -50,7 +50,11 @@ img * {
   }
 
   .quote {
-    margin: 51px auto;
+    margin: 40px auto;
+   
+    h3 {
+      font-size: 32px;
+    }
   }
 
   .user-journey {
@@ -92,13 +96,12 @@ img * {
       display: flex;
       gap: 1em;
       flex-direction: column;
-      // align-content: center;
       justify-content: center;
       align-items: center;
       margin-bottom: 51px;
 
-      img {
-        width: 80%;
+      .gif-2 {
+        height: 22em;
       }
     }
   }

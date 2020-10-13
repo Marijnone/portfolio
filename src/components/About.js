@@ -78,4 +78,25 @@ function About() {
   )
 }
 
+export const fluidImage = graphql`
+  fragment fluidImage on File {
+    childImageSharp {
+      fluid(maxWidth: 1200) {
+        ...GatsbyImageSharpFluid
+      }
+      fixed(width: 100) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+`
+
+export const pageQuery = graphql`
+  query {
+    imageOne: file(relativePath: { eq: "case-2/spatial-valley-big.png" }) {
+      ...fluidImage
+    }
+  }
+`
+
 export default About

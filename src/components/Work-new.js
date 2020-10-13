@@ -50,7 +50,7 @@ const WorkItems = () => {
   const animation = useAnimation()
  
   const [contentRef, inView] = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
     rootMargin: "-100px",
   })
   const [hoverState, setHoverState] = useState()

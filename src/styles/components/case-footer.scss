@@ -1,0 +1,43 @@
+.footer-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  margin-top: 7em;
+
+  .foot-button {
+    display: grid;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    background: #E5E5E5;
+    border: 2px solid black;
+    align-self: center;
+    place-content: center;
+    text-align: center;
+    padding: 1em;
+    grid-column: 2;
+    box-shadow: $grey-shadow;
+
+      a {
+        padding: 30px;;
+        text-decoration: none;
+        font-family: "Mint Grotesk";
+        font-weight: 600;
+        font-size: 21px;
+        color: black;
+      }
+  
+  }
+
+
+
+  
+  @media (min-width: $tablet-medium) {
+      .foot-button {
+          width: 6em;
+          height: 6em;
+      }
+
+  }
+
+}

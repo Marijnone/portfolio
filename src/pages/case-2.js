@@ -1,8 +1,12 @@
 import React, { useEffect } from "react"
 import { useInView } from "react-intersection-observer"
 import { useAnimation, motion } from "framer-motion"
+import { userStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import "../styles/pages/case-1.scss"
+
+import Casefooter from "../components/case-footer"
 
 //SVG's
 import Ellipse from "../images/case-2/Ellipse-6.svg"
@@ -55,35 +59,13 @@ const mainContent = {
   },
 }
 
-function Case2() {
-  const animation = useAnimation()
-  const [contentRef, inView] = useInView({
-    triggerOnce: true,
-    rootMargin: "-100px",
-    // threshold: [0, 0.5],
-  })
-  useEffect(() => {
-    if (inView) {
-      animation.start("visible")
-    }
-  }, [animation, inView])
+function Case2(props) {
+
   return (
     <div>
       <motion.section variants={container} className="grid-container-case">
         <article className="fp">
-          <motion.h1 variants={mainContent}>Spatial valley</motion.h1>
-
-          <motion.div
-            className="header-image"
-            variants={imageAnimation}
-            transition="transition"
-          >
-            {/* <img src={Rectangle} alt="" />
-            <img src={Polygon} alt="" />
-            <img src={Ellipse} alt="" /> */}
-
-            {/* <Img fluid={props.data.imageOne.childImageSharp.fluid} alt="" /> */}
-          </motion.div>
+          <motion.h1 variants={mainContent}>Spatial.Valley</motion.h1>
 
           <motion.div
             className="details"
@@ -111,13 +93,43 @@ function Case2() {
           <motion.p variants={mainContent} transition={transition}>
             This is a side project where the main idea was to create a place to
             share my sparkAR filters. Since I had so much fun building these.
-            I've decided to create a landing page for this service And
-            development is still a WIP.
+            I've decided to create a landing page for this service and
+            eventuelly develop a site using the JamStack, development is still a
+            WIP.
           </motion.p>
+          <motion.div
+            className="header-image"
+            variants={imageAnimation}
+            transition="transition"
+          >
+            <Img fluid={props.data.imageOne.childImageSharp.fluid} alt="" />
+          </motion.div>
         </article>
       </motion.section>
+      <Casefooter case="-1" />
     </div>
   )
 }
+
+export const fluidImage = graphql`
+  fragment fluidImage on File {
+    childImageSharp {
+      fluid(maxWidth: 1200) {
+        ...GatsbyImageSharpFluid
+      }
+      fixed(width: 100) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+`
+
+export const pageQuery = graphql`
+  query {
+    imageOne: file(relativePath: { eq: "case-2/spatial-valley-big.png" }) {
+      ...fluidImage
+    }
+  }
+`
 
 export default Case2
