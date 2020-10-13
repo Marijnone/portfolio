@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { useAnimation, motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import { userStaticQuery, graphql } from "gatsby"
 import Casefooter from "../components/case-footer"
 
 import Img from "gatsby-image"

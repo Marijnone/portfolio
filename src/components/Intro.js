@@ -1,7 +1,5 @@
-import React from 'react'
-// import { useStaticQuery } from "gatsby"
-// import Img from "gatsby-image"
-import { motion } from 'framer-motion'
+import React from "react"
+import { motion } from "framer-motion"
 
 export const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] }
 
@@ -12,9 +10,9 @@ export const firstName = {
   animate: {
     y: 0,
     transition: {
-      delayChildren: 0.6,
-      staggerChildren: 0.04,
-      staggerDirection: -1,
+      delayChildren: 0.9,
+      staggerChildren: 0.08,
+      staggerDirection: 1,
     },
   },
 }
@@ -26,7 +24,7 @@ export const lastName = {
   animate: {
     y: 0,
     transition: {
-      delayChildren: 0.6,
+      delayChildren: 0.8,
       staggerChildren: 0.04,
       staggerDirection: 1,
     },
@@ -36,12 +34,12 @@ export const lastName = {
 export const letter = {
   initial: {
     opacity: 0,
-    y: 400,
+    y: 95,
   },
   animate: {
     opacity: 1,
     y: 0,
-    transition: { duration: 1.2, ...transition },
+    transition: { duration: 4.2, ...transition },
   },
 }
 
@@ -57,7 +55,27 @@ export const subtitle = {
   },
 }
 
+export const name = {
+  initial: {
+    opacity: 0,
+    y: 40,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 2.6, ...transition },
+  },
+}
+
 const Intro = () => {
+  const myFirstName = Array.from("Marijn")
+
+  const myLastName = Array.from("Moviat")
+
+  const prof1 = Array.from("Front-End Developer")
+
+  const prof2 = Array.from("UX-Designer")
+
   return (
     <motion.section
       className="grid-container"
@@ -65,61 +83,37 @@ const Intro = () => {
       initial="initial"
     >
       <motion.div className="name">
-        <motion.span classname="first" variants={firstName}>
-          <motion.span variants={letter}>M</motion.span>
-          <motion.span variants={letter}>a</motion.span>
-          <motion.span variants={letter}>r</motion.span>
-          <motion.span variants={letter}>i</motion.span>
-          <motion.span variants={letter}>j</motion.span>
-          <motion.span variants={letter}>n</motion.span>
+        <motion.span classname="first" variants={name}>
+          {myFirstName.map((str, index) => (
+            <motion.span  key={index} >
+              {str === " " ? "\u00A0" : str}
+            </motion.span>
+          ))}
         </motion.span>
-        <motion.span className="last" variants={lastName}>
-          <motion.span variants={letter}>M</motion.span>
-          <motion.span variants={letter}>o</motion.span>
-          <motion.span variants={letter}>v</motion.span>
-          <motion.span variants={letter}>i</motion.span>
-          <motion.span variants={letter}>a</motion.span>
-          <motion.span variants={letter}>t</motion.span>
+        <motion.span className="last" variants={name}>
+          {myLastName.map((str, index) => (
+            <motion.span  key={index}>
+              {str === " " ? "\u00A0" : str}
+            </motion.span>
+          ))}
         </motion.span>
       </motion.div>
       <motion.div className="prof-1">
         <motion.span className="span-prof-1" variants={lastName}>
-          <motion.span variants={letter}>U</motion.span>
-          <motion.span variants={letter}>X</motion.span>
-          <motion.span variants={letter}>-</motion.span>
-          <motion.span variants={letter}>D</motion.span>
-          <motion.span variants={letter}>e</motion.span>
-          <motion.span variants={letter}>s</motion.span>
-          <motion.span variants={letter}>i</motion.span>
-          <motion.span variants={letter}>g</motion.span>
-          <motion.span variants={letter}>n</motion.span>
-          <motion.span variants={letter}>e</motion.span>
-          <motion.span variants={letter}>r</motion.span>
+          {prof1.map((str, index) => (
+            <motion.span variants={letter} key={index}>
+              {str === " " ? "\u00A0" : str}
+            </motion.span>
+          ))}
         </motion.span>
       </motion.div>
       <motion.div className="prof-2">
         <motion.span className="span-prof-2" variants={firstName}>
-          <motion.span variants={letter}>F</motion.span>
-          <motion.span variants={letter}>r</motion.span>
-          <motion.span variants={letter}>o</motion.span>
-          <motion.span variants={letter}>n</motion.span>
-          <motion.span variants={letter}>t</motion.span>
-          <motion.span variants={letter}>-</motion.span>
-          <motion.span variants={letter}>e</motion.span>
-          <motion.span variants={letter}>n</motion.span>
-          <motion.span variants={letter}>d</motion.span>
-          <motion.span> </motion.span>
-          <motion.span className="span-prof-2" variants={lastName}>
-            <motion.span variants={letter}>D</motion.span>
-            <motion.span variants={letter}>e</motion.span>
-            <motion.span variants={letter}>v</motion.span>
-            <motion.span variants={letter}>e</motion.span>
-            <motion.span variants={letter}>l</motion.span>
-            <motion.span variants={letter}>o</motion.span>
-            <motion.span variants={letter}>p</motion.span>
-            <motion.span variants={letter}>e</motion.span>
-            <motion.span variants={letter}>r</motion.span>
-          </motion.span>
+        {prof2.map((str, index) => (
+            <motion.span variants={letter} key={index}>
+              {str === " " ? "\u00A0" : str}
+            </motion.span>
+          ))}
         </motion.span>
         <motion.h4 variants={subtitle} className="grey">
           Currently looking for a job as a UX Designer
