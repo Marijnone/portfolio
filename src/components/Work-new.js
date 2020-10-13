@@ -19,15 +19,6 @@ const titleSlideUp = {
   animate: { y: 0, opacity: 1 },
 }
 
-const parent = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.4,
-    },
-  },
-}
-
 const showUp = {
   visible: {
     opacity: 1,

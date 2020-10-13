@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react'
-import { useInView } from 'react-intersection-observer'
-import { motion , useAnimation } from 'framer-motion'
+import React from 'react'
+
 //Components
 import Shapes from '../components/Shapes'
 import Intro from '../components/Intro'
-import Work from '../components/Work'
 import Worknew from '../components/Work-new'
 import About from '../components/About'
 //Hooks
@@ -20,7 +18,6 @@ const Home = () => {
     <>
       {!isSSR && <Shapes />}
       {!isSSR && <Intro />}
-      {/* {!isSSR && <Work />} */}
       <Worknew />
       <About />
       {/* <Music /> */}
