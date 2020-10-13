@@ -6,7 +6,6 @@ import Header from './Header'
 import '../styles/main.scss'
 
 //Hooks
-import UseMousePosition from '../hooks/getMousePosition'
 
 const duration = 0.6
 
@@ -32,7 +31,7 @@ const variants = {
 const isSSR = typeof window === 'undefined'
 
 const Layout = ({ children, location }) => {
-  const { x, y } = UseMousePosition()
+  
   return (
     <>
       <Header />

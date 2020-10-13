@@ -6,11 +6,14 @@
 
 //Pages
 @import "../styles/pages/case-1.scss";
+@import "../styles/pages/case-2.scss";
 
 //Components
 @import "../styles/components/work.scss";
 @import "../styles/components/layout.scss";
 @import "../styles/components/custom_cursor.scss";
+@import "../styles/components/about.scss";
+@import "../styles/components/case-footer.scss";
 
 
 
@@ -41,6 +44,7 @@ body {
   grid-row: 2 / 5;
   z-index: 10;
   grid-template-columns: repeat(auto-fill, 121px);
+  pointer-events: none;
 
   span {
     display: inline-block;
@@ -122,6 +126,10 @@ span.span-prof-2:nth-child(1) > span:nth-child(9) {
     opacity: 1;
     // transform: translateY(500px);
   }
+}
+
+@keyframes Bounce  {
+
 }
 
 // Background shapes
