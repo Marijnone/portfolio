@@ -72,9 +72,10 @@ const Intro = () => {
 
   const myLastName = Array.from("Moviat")
 
-  const prof1 = Array.from("Front-End Developer")
+  const prof1 = Array.from("Front-End")
+  const prof2 = Array.from("Developer")
 
-  const prof2 = Array.from("UX-Designer")
+  const prof3 = Array.from("UX-Designer")
 
   return (
     <motion.section
@@ -115,6 +116,16 @@ const Intro = () => {
             </motion.span>
           ))}
         </motion.span>
+        
+        <motion.div className="prof-3">
+        <motion.span className="span-prof-2" variants={lastName}>
+          {prof3.map((str, index) => (
+            <motion.span variants={letter} key={index}>
+              {str === " " ? "\u00A0" : str}
+            </motion.span>
+          ))}
+        </motion.span>
+      </motion.div>
         <motion.h4 variants={subtitle} className="grey">
           Currently looking for a job as a UX Designer
         </motion.h4>
