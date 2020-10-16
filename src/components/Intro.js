@@ -72,10 +72,8 @@ const Intro = () => {
 
   const myLastName = Array.from("Moviat")
 
-  const prof1 = Array.from("Front-End")
-  const prof2 = Array.from("Developer")
-
-  const prof3 = Array.from("UX-Designer")
+  const prof1 = Array.from("Front-End Developer")
+  const prof2 = Array.from("UX-Designer")
 
   return (
     <motion.section
@@ -83,53 +81,61 @@ const Intro = () => {
       animate="animate"
       initial="initial"
     >
-      <motion.div className="name">
-        <motion.span classname="first" variants={name}>
+      <motion.div className="first-name">
+        <motion.span className="span-name" variants={lastName}>
           {myFirstName.map((str, index) => (
-            <motion.span  key={index} >
-              {str === " " ? "\u00A0" : str}
-            </motion.span>
-          ))}
-        </motion.span>
-        <motion.span className="last" variants={name}>
-          {myLastName.map((str, index) => (
-            <motion.span  key={index}>
-              {str === " " ? "\u00A0" : str}
+            <motion.span variants={letter} key={index}>
+             <h1>{str === " " ? "\u00A0" : str}</h1>
             </motion.span>
           ))}
         </motion.span>
       </motion.div>
-      <motion.div className="prof-1">
-        <motion.span className="span-prof-1" variants={lastName}>
+
+      <motion.div className="last-name">
+        <motion.span className="span-name" variants={lastName}>
+          {myLastName.map((str, index) => (
+            <motion.span variants={letter} key={index}>
+              <h1>{str === " " ? "\u00A0" : str}</h1>
+            </motion.span>
+          ))}
+        </motion.span>
+      </motion.div>
+
+      <motion.div className="dev">
+        <motion.span className="span-dev" variants={lastName}>
           {prof1.map((str, index) => (
             <motion.span variants={letter} key={index}>
-              {str === " " ? "\u00A0" : str}
+             <h3>{str === " " ? "\u00A0" : str} </h3>
             </motion.span>
           ))}
         </motion.span>
       </motion.div>
-      <motion.div className="prof-2">
-        <motion.span className="span-prof-2" variants={firstName}>
-        {prof2.map((str, index) => (
+
+      <motion.div className="ux">
+        <motion.span className="span-ux" variants={firstName}>
+          {prof2.map((str, index) => (
             <motion.span variants={letter} key={index}>
-              {str === " " ? "\u00A0" : str}
+              <h3>{str === " " ? "\u00A0" : str} </h3>
             </motion.span>
           ))}
         </motion.span>
+      </motion.div>
+
+      <div className="scroll">
+        <span>
+          scroll
+        </span>
         
-        <motion.div className="prof-3">
-        <motion.span className="span-prof-2" variants={lastName}>
-          {prof3.map((str, index) => (
-            <motion.span variants={letter} key={index}>
-              {str === " " ? "\u00A0" : str}
-            </motion.span>
-          ))}
-        </motion.span>
-      </motion.div>
+
+      </div>
+
+   
+
+      {/* <motion.div>
         <motion.h4 variants={subtitle} className="grey">
           Currently looking for a job as a UX Designer
         </motion.h4>
-      </motion.div>
+      </motion.div> */}
     </motion.section>
   )
 }

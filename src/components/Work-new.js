@@ -131,20 +131,6 @@ const WorkItems = () => {
                   />
                 </div>
               </Link>
-              <motion.div
-                className="floating-image"
-                initial={{ opacity: 0 }}
-                animate={
-                  {
-                    // opacity: hoverState === index ? 1 : 0,
-                    // x: mouseXState,
-                    // y: mouseYState
-                  }
-                }
-                transition={{ ease: "linear" }}
-              >
-                <img src={image1} alt="" />
-              </motion.div>
             </motion.li>
           )
         })}

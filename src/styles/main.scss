@@ -15,8 +15,6 @@
 @import "../styles/components/about.scss";
 @import "../styles/components/case-footer.scss";
 
-
-
 html,
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -26,82 +24,133 @@ body {
 }
 
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  height: 100vh;
-  grid-auto-rows: 80px;
-
-  @media screen and (max-width: $mobile-large) {
-    grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: 40px;
-  }
-}
-
-.name {
-  display: grid;
-  place-content: start;
-  grid-column: 1 / -1;
-  grid-row: 2;
   z-index: 10;
-  grid-template-columns: repeat(auto-fill, 155px);
+  padding: 0 2%;
+  margin-top: 92px;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(auto-fit, 100px);
+  gap: 0px 0px;
+  grid-template-areas:
+    "first-name first-name first-name . . ."
+    ". last-name last-name last-name . ."
+    " . . . dev dev dev"
+    " . . . ux ux ux"
+    "scroll . . . . .";
+
+  @media screen and (max-width: $tablet-small) {
+    grid-template-rows: repeat(auto-fit, 55px);
+    grid-template-areas:
+      "first-name first-name first-name . . ."
+      ". last-name last-name . . ."
+      "dev dev dev . . ."
+      ". . ux ux ux . "
+      "scroll . . . . .";
+  }
+}
+
+.first-name {
+  grid-area: first-name;
+  height: 2px;
+  z-index: 9;
   pointer-events: none;
-  font-size: 3em;
-
-  // span {
-  //   display: inline-block;
-  //   position: relative;
-  // }
+  // font-size: 2em;
 }
 
-.prof-1 {
-  display: grid;
-  grid-column: 1/4;
-  place-content: start;
-  grid-row: 4;
-  // grid-template-columns: repeat(2, 1fr);
+.last-name {
+  grid-area: last-name;
+  z-index: 9;
 }
 
-.prof-2 {
-  display: grid;
-  grid-column: 1/12;
-  place-content: start;
-  grid-row: 5;
-
-  .span-prof-2 {
-    display: inline-flex;
-    flex-wrap: wrap;
-  }
+.ux {
+  pointer-events: none;
+  grid-area: ux;
+  color: $black;
+  z-index:9;
 }
+
+.dev {
+  grid-area: dev;
+}
+
+.scroll {
+  grid-area: scroll;
+  width: 0;
+  height: 0;
+  transform: rotate(90deg);
+  transform-origin: left;
+  // margin-left: 10%;
+  font-weight: 700;
+}
+
+.span-name,
+.span-ux,
+.span-dev {
+  display: flex;
+}
+
+// .name {
+//   display: grid;
+//   place-content: start;
+//   grid-column: 1 / -1;
+//   grid-row: 2;
+//   z-index: 10;
+//   grid-template-columns: repeat(auto-fill, 155px);
+//   pointer-events: none;
+//   font-size: 3em;
+// }
+
+// .prof-1 {
+//   display: grid;
+//   grid-column: 1/4;
+//   place-content: start;
+//   grid-row: 4;
+//   // grid-template-columns: repeat(2, 1fr);
+// }
+
+// .prof-2 {
+//   display: grid;
+//   grid-column: 1/12;
+//   place-content: start;
+//   grid-row: 5;
+
+//   .span-prof-2 {
+//     display: inline-flex;
+//     flex-wrap: wrap;
+//   }
+// }
 //to add padding after End
-.span-prof-1,
-.span-prof-2 {
-  font-size: 86px;
-  font-family: Mint Grotesk;
-  font-weight: 900;
-  display: inline-flex;
-  position: relative;
-  // flex-wrap: wrap;
-  @media screen and (max-width: $desktop-medium) {
-    font-size: 60px;
-    line-height: 64px;
-  }
+// .span-prof-1,
+// .span-prof-2 {
+//   font-size: 86px;
+//   font-family: Mint Grotesk;
+//   font-weight: 900;
+//   display: inline-flex;
+//   position: relative;
+//   // flex-wrap: wrap;
+//   @media screen and (max-width: $desktop-medium) {
+//     font-size: 60px;
+//     line-height: 64px;
+//   }
 
-  @media screen and (max-width: $tablet-medium) {
-    font-size: 52px;
-    line-height: 56px;
-  }
+//   @media screen and (max-width: $tablet-medium) {
+//     font-size: 52px;
+//     line-height: 56px;
+//   }
 
-  @media screen and (max-width: $mobile-large) {
-    font-size: 40px;
-    line-height: 44px;
-  }
-}
+//   @media screen and (max-width: $mobile-large) {
+//     font-size: 40px;
+//     line-height: 44px;
+//   }
+// }
 
-.sub-title {
-  z-index: 1;
-}
+// .sub-title {
+//   z-index: 1;
+// }
 
-.frame-group, header {
+.frame-group,
+header {
   // position: relative;
   opacity: 0;
   animation: CellAnimation;
@@ -126,37 +175,8 @@ body {
   }
 }
 
-@keyframes Bounce  {
-
-}
-
-// Background shapes
-
-// .shape1 {
-//   z-index: 0;
-//   height: 250px;
-//   width: 250px;
-//   border-radius: 50%;
-//   background: ;
-//   // position: relative;
-//   // top: 4em;
-//   // transform: rotate(180deg);
-//   // right: 0;
-//   // display: inline;
-// }
-
-// .shape-2 {
-//   z-index: 0;
-//   height: 120px;
-//   width: 120px;
-//   border-radius: 50%;
-//   background: conic-gradient(from 0deg at 50% 50%, #d0d3f2 -176.84deg, #545050 54.17deg, #d0d3f2 183.16deg, #f73433 414.17deg);
-//   top: 21em;
-//   left: calc(100% - 10em);
-//   position: relative;
-// }
 .frame-group {
-  z-index: 0;
+  z-index: -11;
 }
 
 // .banner {

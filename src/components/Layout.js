@@ -34,7 +34,7 @@ const Layout = ({ children, location }) => {
   
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <div className="layout-container">
         {!isSSR && (
           <AnimatePresence>
