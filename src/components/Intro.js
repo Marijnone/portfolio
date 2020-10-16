@@ -1,5 +1,6 @@
 import React from "react"
 import { motion } from "framer-motion"
+import Scrollsvg from "../images/shapes/rect-blue.svg"
 
 export const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] }
 
@@ -122,20 +123,21 @@ const Intro = () => {
       </motion.div>
 
       <div className="scroll">
-        <span>
+        <motion.span variants={lastName}>
+          {/* <img src={Scrollsvg} alt=""/> */}
           scroll
-        </span>
+        </motion.span>
         
 
       </div>
 
    
 
-      {/* <motion.div>
+      <motion.div className="subtitle">
         <motion.h4 variants={subtitle} className="grey">
           Currently looking for a job as a UX Designer
         </motion.h4>
-      </motion.div> */}
+      </motion.div>
     </motion.section>
   )
 }

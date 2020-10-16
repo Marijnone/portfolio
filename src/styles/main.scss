@@ -35,18 +35,20 @@ body {
   grid-template-areas:
     "first-name first-name first-name . . ."
     ". last-name last-name last-name . ."
-    " . . . dev dev dev"
-    " . . . ux ux ux"
+    " . . . dev dev dev "
+    " . . . ux ux ux "
+    " . subtitle subtitle subtitle  subtitle . "
     "scroll . . . . .";
 
   @media screen and (max-width: $tablet-small) {
     grid-template-rows: repeat(auto-fit, 55px);
     grid-template-areas:
-      "first-name first-name first-name . . ."
+      "first-name first-name first-name . . . "
       ". last-name last-name . . ."
-      "dev dev dev . . ."
-      ". . ux ux ux . "
-      "scroll . . . . .";
+      " dev dev dev . . . "
+      " . . ux ux ux . "
+      " . subtitle subtitle subtitle  subtitle ."
+      " scroll . . . . . ";
   }
 }
 
@@ -58,6 +60,10 @@ body {
   // font-size: 2em;
 }
 
+.subtitle {
+  grid-area: subtitle;
+}
+
 .last-name {
   grid-area: last-name;
   z-index: 9;
@@ -67,21 +73,28 @@ body {
   pointer-events: none;
   grid-area: ux;
   color: $black;
-  z-index:9;
+  z-index: 9;
 }
 
 .dev {
   grid-area: dev;
+  z-index: 9;
 }
 
 .scroll {
   grid-area: scroll;
   width: 0;
   height: 0;
-  transform: rotate(90deg);
-  transform-origin: left;
+  transform: rotate(-90deg);
+  // transform-origin: left;
   // margin-left: 10%;
   font-weight: 700;
+
+  img {
+    transform: rotate(-90deg);
+    position: relative;
+    margin: 0;
+  }
 }
 
 .span-name,
@@ -171,7 +184,7 @@ header {
   }
   100% {
     opacity: 1;
-    // transform: translateY(500px);
+    // transform: (50px);
   }
 }
 
