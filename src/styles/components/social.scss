@@ -1,0 +1,15 @@
+.social-banner {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  right: 1em;
+  gap: 1em;
+  z-index: 9;
+  background-color: transparent;
+  height: 0;
+
+  img {
+    background-color: transparent;
+  }
+}

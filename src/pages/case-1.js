@@ -1,18 +1,18 @@
-import React, { useEffect } from "react"
-import { useAnimation, motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import Casefooter from "../components/case-footer"
+import React, { useEffect } from 'react'
+import { useAnimation, motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import Casefooter from '../components/case-footer'
 
-import Img from "gatsby-image"
+import Img from 'gatsby-image'
 
-import "../styles/pages/case-1.scss"
+import '../styles/pages/case-1.scss'
 
 //Gifs
-import prototypegif1 from "../images/case-1/gifs/prototype2.gif"
-import prototypegif2 from "../images/case-1/gifs/prototype3.gif"
-import prototypegif3 from "../images/case-1/gifs/Phoneholder-GIF.gif"
-import prototypegif4 from "../images/case-1/gifs/Slider-GIF.gif"
-import prototypegif5 from "../images/case-1/gifs/Tracking-GIF.gif"
+import prototypegif1 from '../images/case-1/gifs/prototype2.gif'
+import prototypegif2 from '../images/case-1/gifs/prototype3.gif'
+import prototypegif3 from '../images/case-1/gifs/Phoneholder-GIF.gif'
+import prototypegif4 from '../images/case-1/gifs/Slider-GIF.gif'
+import prototypegif5 from '../images/case-1/gifs/Tracking-GIF.gif'
 
 const transition = { duration: 1.4, ease: [0.6, 0.05, -0.01, 0.9] }
 
@@ -35,7 +35,7 @@ const imageAnimation = {
 const container = {
   enter: {
     transition: {
-      when: "beforeChildren",
+      when: 'beforeChildren',
       staggerChildren: 0.4,
       delayChildren: 0.5,
     },
@@ -80,13 +80,13 @@ const AnimatedPage = (props) => {
   const animation = useAnimation()
   const [contentRef, inView] = useInView({
     triggerOnce: true,
-    rootMargin: "-100px",
+    rootMargin: '-100px',
     // threshold: [0, 0.5],
   })
 
   useEffect(() => {
     if (inView) {
-      animation.start("visible")
+      animation.start('visible')
     }
   }, [animation, inView])
 
@@ -294,10 +294,10 @@ const AnimatedPage = (props) => {
             <motion.p>
               This early prototype was build using Torch.io which allowed simple
               interaction. This was of course not perfect because it lacked many
-              features, but good enough to prototype.{" "}
+              features, but good enough to prototype.{' '}
               <b>
                 The main goal was to show the user how the guide would work.
-              </b>{" "}
+              </b>{' '}
               The user scans a tag and the guide appears next to the PO. Then
               the user can click on the screens and proceed to learn about the
               PO. With this prototype I could test verify if people shared my
@@ -376,7 +376,7 @@ const AnimatedPage = (props) => {
               through the lessons.
             </p>
             {/* <div className="prototyping-container"></div> */}
-             <h4>UI Design</h4>
+            <h4>UI Design</h4>
             <p>
               I started off by sketching the new interaction and then I
               proceeded to Photoshop to make the 3D assets like letters or the
