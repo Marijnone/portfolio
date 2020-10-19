@@ -31,7 +31,6 @@ const variants = {
 const isSSR = typeof window === 'undefined'
 
 const Layout = ({ children, location }) => {
-  
   return (
     <>
       {/* <Header /> */}

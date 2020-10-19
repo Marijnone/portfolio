@@ -234,8 +234,6 @@
 // }
 // export default Work
 
-
-
 // <li>
 // <Link to={"/case-1"}>
 //   <div className="line left" />

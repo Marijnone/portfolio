@@ -1,24 +1,24 @@
-import React, { useEffect } from "react"
-import { useInView } from "react-intersection-observer"
-import { useAnimation, motion } from "framer-motion"
-import { userStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import React, { useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
+import { useAnimation, motion } from 'framer-motion'
+import { userStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-import "../styles/pages/case-1.scss"
+import '../styles/pages/case-1.scss'
 
-import Casefooter from "../components/case-footer"
+import Casefooter from '../components/case-footer'
 
 //SVG's
-import Ellipse from "../images/case-2/Ellipse-6.svg"
-import Polygon from "../images/case-2/Polygon-2.svg"
-import Rectangle from "../images/case-2/Rectangle-6.svg"
+import Ellipse from '../images/case-2/Ellipse-6.svg'
+import Polygon from '../images/case-2/Polygon-2.svg'
+import Rectangle from '../images/case-2/Rectangle-6.svg'
 //Variants
 const transition = { duration: 1.4, ease: [0.6, 0.05, -0.01, 0.9] }
 
 const container = {
   enter: {
     transition: {
-      when: "beforeChildren",
+      when: 'beforeChildren',
       staggerChildren: 0.4,
       delayChildren: 0.5,
     },
@@ -60,7 +60,6 @@ const mainContent = {
 }
 
 function Case2(props) {
-
   return (
     <div>
       <motion.section variants={container} className="grid-container-case">

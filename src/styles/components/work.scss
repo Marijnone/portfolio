@@ -45,15 +45,25 @@
   //   }
   // }
 
-  .title {
+  .text {
     margin: 0;
     overflow: hidden;
     padding: 10px 15px 10px;
     z-index: 10;
+    &:hover {
+      -webkit-text-fill-color: $light-grey;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: $black;
+    }
 
     span {
       display: inline-block;
       // transform: translateY(50px);
+      &:hover {
+        -webkit-text-fill-color: $light-grey;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: $black;
+      }
     }
   }
 
