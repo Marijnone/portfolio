@@ -1,8 +1,8 @@
-import React from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Helmet } from "react"
+import React from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Helmet } from 'react'
 //Styles
-import "../styles/main.scss"
+import '../styles/main.scss'
 
 //Hooks
 
@@ -17,7 +17,7 @@ const variants = {
     transition: {
       duration: duration,
       delay: duration,
-      when: "beforeChildren",
+      when: 'beforeChildren',
     },
   },
   exit: {
@@ -27,7 +27,7 @@ const variants = {
 }
 //Hook call
 
-const isSSR = typeof window === "undefined"
+const isSSR = typeof window === 'undefined'
 
 const Layout = ({ children, location }) => {
   return (

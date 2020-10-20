@@ -1,12 +1,12 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import { motion } from "framer-motion"
-import { graphql } from "gatsby"
-import Img from "gatsby-image"
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { motion } from 'framer-motion'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-import "../styles/pages/case-1.scss"
+import '../styles/pages/case-1.scss'
 
-import Casefooter from "../components/case-footer"
+import Casefooter from '../components/case-footer'
 
 //Variants
 const transition = { duration: 1.4, ease: [0.6, 0.05, -0.01, 0.9] }
@@ -14,7 +14,7 @@ const transition = { duration: 1.4, ease: [0.6, 0.05, -0.01, 0.9] }
 const container = {
   enter: {
     transition: {
-      when: "beforeChildren",
+      when: 'beforeChildren',
       staggerChildren: 0.4,
       delayChildren: 0.5,
     },
