@@ -11,7 +11,7 @@ const socials = {
   visible: {
     opacity: 1,
     transition: {
-      when: 'beforeChildren',
+      when: "beforeChildren",
       staggerChildren: 0.09,
       staggerDirection: 1,
       delay: 3,
@@ -20,7 +20,7 @@ const socials = {
   hidden: {
     opacity: 0,
     transition: {
-      when: 'afterChildren',
+      when: "afterChildren",
     },
   },
 }
@@ -44,7 +44,7 @@ function Socials() {
         <motion.img variants={item} src={github} alt="Github icon"></motion.img>
       </a>
 
-      <a rel="noopener" href="https://www.linkedin.com/in/marijn-moviat">
+      <a rel="noopener" href="www.linkedin.com/in/marijn-moviat">
         <motion.img
           variants={item}
           src={linkedin}
