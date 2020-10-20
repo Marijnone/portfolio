@@ -1,14 +1,14 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { useAnimation, motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Link } from 'gatsby'
-import Image from 'gatsby-image'
 // import useMousePosition from '../hooks/getMousePosition'
-import image1 from '../images/ar-guide.png'
 
-let isListenerSet = false
-
-const projectTitles = ['Spark AR Guide', 'Spatial valley', 'Under construction ⛔️']
+const projectTitles = [
+  'Spark AR Guide',
+  'Spatial valley',
+  'Under construction ⛔️',
+]
 
 //Transition
 const transition = { duration: 0.8, ease: [0.6, -0.5, 0.01, 0.9] }
@@ -49,7 +49,6 @@ const WorkItems = () => {
     triggerOnce: false,
     rootMargin: '-100px',
   })
-  const [hoverState, setHoverState] = useState()
   // const [mouseXState, setMouseXState] = useState()
   // const [mouseYState, setMouseYState] = useState()
 
@@ -59,8 +58,6 @@ const WorkItems = () => {
   // })
 
   //HOOKS
-
-  const work = useRef()
 
   useEffect(() => {
     if (inView) {

@@ -84,9 +84,11 @@ body {
 
 .scroll {
   grid-area: scroll;
+  position: relative;
   width: 0;
   height: 0;
   transform: rotate(-90deg);
+  top: 80%;
   // transform-origin: left;
   // margin-left: 10%;
   font-weight: 700;
@@ -175,7 +177,7 @@ header {
   // height: 100%;
   // width: 100%;
   // max-width: 100%;
-  color: #a499dc;
+  // color: #a499dc;
 }
 
 @keyframes CellAnimation {
