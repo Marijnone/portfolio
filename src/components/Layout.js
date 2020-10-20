@@ -1,7 +1,6 @@
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Header from './Header'
-
+import { Helmet } from 'react'
 //Styles
 import '../styles/main.scss'
 
@@ -33,7 +32,6 @@ const isSSR = typeof window === 'undefined'
 const Layout = ({ children, location }) => {
   return (
     <>
-      {/* <Header /> */}
       <div className="layout-container">
         {!isSSR && (
           <AnimatePresence>

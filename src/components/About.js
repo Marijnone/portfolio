@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { useAnimation, motion } from 'framer-motion'
 
-const transition = { duration: 1.4, ease: [0.6, 0.05, -0.01, 0.9] }
+const transition = { duration: 1.8, ease: [0.6, 0.05, -0.01, 0.9] }
 
 //Variants
 
@@ -28,7 +28,7 @@ function About() {
   const animation = useAnimation()
   const [contentRef, inView0] = useInView({
     triggerOnce: true,
-    rootMargin: '-200px',
+    rootMargin: '-150px',
   })
 
   useEffect(() => {
@@ -59,10 +59,10 @@ function About() {
         <motion.p variants={showUp}>
           During my studies, I've focussed on UX but mostly the technical side,
           building products with Javascript, Node.js, React. Being an
-          ever-learning designer I've realized that I enjoy optimizing UX a
-          little more than coding 24/7. I'm always looking for new ways to solve
-          a problem and don't step back from a technical challenge. Currently
-          I'm learning about Augmented Reality and UX.
+          ever-learning designer I've realized that I enjoy UX more than just
+          coding. I'm always looking for new ways to solve a problem and don't
+          step back from a technical challenge. Currently I'm learning about
+          Augmented Reality and UX.
         </motion.p>
         <motion.p variants={showUp}>
           When I'm not designing or coding, I'm making music under my lo-fi

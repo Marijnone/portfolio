@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 
 //Components
 import Shapes from '../components/Shapes'
@@ -16,6 +17,11 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Portfolio website Marijn Moviat | UX-Designer</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <Socials />
       {!isSSR && <Shapes />}
       {!isSSR && <Intro />}

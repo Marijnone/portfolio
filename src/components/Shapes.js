@@ -1,18 +1,17 @@
 import React from 'react'
 import { Frame, useAnimation } from 'framer'
-// import { motion } from "framer-motion"
+
+const breakpoint = 620
 
 const Shape1 = (props) => {
   return (
     <Frame
       name={'shape1'}
-      height={250}
-      width={250}
+      height={window.innerWidth < breakpoint ? 150 : 250}
+      width={window.innerWidth < breakpoint ? 150 : 250}
       borderRadius={250}
       center
-      // top={350}
-      // right={100}
-      // left={530}
+      top={220}
       backgroundColor={'#B1FCEB'}
       shadow={'0px 0px 40px rgba(0, 0, 0, 0.2)'}
       animate={props.animate}
@@ -23,12 +22,12 @@ const Shape2 = (props) => {
   return (
     <Frame
       name={'shape2'}
-      height={220}
-      width={220}
+      height={window.innerWidth < breakpoint ? 160 : 250}
+      width={window.innerWidth < breakpoint ? 160 : 250}
+      left={window.innerWidth < breakpoint ? '30%' : 520}
       borderRadius={250}
       center
-      top={420}
-      // left={60}
+      top={300}
       backgroundColor={'#A499DC'}
       shadow={'0px 0px 40px rgba(0, 0, 0, 0.2)'}
       animate={props.animate}

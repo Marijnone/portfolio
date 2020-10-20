@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useAnimation, motion } from 'framer-motion'
+import { Helmet } from 'react-helmet'
 import { useInView } from 'react-intersection-observer'
 import Casefooter from '../components/case-footer'
-
 import Img from 'gatsby-image'
 
 import '../styles/pages/case-1.scss'
@@ -92,6 +92,13 @@ const AnimatedPage = (props) => {
 
   return (
     <>
+      <Helmet>
+        <title>UX-Case | PO-33 AR Guide</title>
+        <meta
+          name="description"
+          content="AR guide for the pocket operator by teenage engineering case study"
+        />
+      </Helmet>
       <motion.section variants={container} className="grid-container-case">
         <article className="fp">
           <motion.h1 variants={mainContent} className="blue">

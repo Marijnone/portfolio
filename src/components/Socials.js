@@ -1,9 +1,9 @@
-import React from "react"
+import React from 'react'
 
-import { motion } from "framer-motion"
+import { motion } from 'framer-motion'
 
-import github from "../images/icons/github.svg"
-import linkedin from "../images/icons/linkedin.svg"
+import github from '../images/icons/github.svg'
+import linkedin from '../images/icons/linkedin.svg'
 
 const transition = { duration: 2, ease: [0.6, -0.5, 0.01, 0.9] }
 
