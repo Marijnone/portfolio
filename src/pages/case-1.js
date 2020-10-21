@@ -145,7 +145,7 @@ const AnimatedPage = (props) => {
           <motion.h4 variants={mainContent} className="blue">
             Opportunity & Problem
           </motion.h4>
-          <p>
+          <motion.p variants={mainContent}>
             Learning new studio gear always takes up a lot of time. You get
             excited to try it out and with a little experience, you can get
             started. But many of the powerful features you would only learn from
@@ -153,7 +153,7 @@ const AnimatedPage = (props) => {
             it's also acknowledged in one of my expert reviews. This is where I
             started to think: why not combine the manual and use AR to teach
             users about all the cool features the PO has?
-          </p>
+          </motion.p>
           <motion.section
             className="user-journey"
             // ref={contentRef}

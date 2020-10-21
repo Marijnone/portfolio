@@ -44,7 +44,7 @@ function Socials() {
         <motion.img variants={item} src={github} alt="Github icon"></motion.img>
       </a>
 
-      <a rel="noopener" href="www.linkedin.com/in/marijn-moviat">
+      <a rel="noopener" href="https://www.linkedin.com/in/marijn-moviat">
         <motion.img
           variants={item}
           src={linkedin}
