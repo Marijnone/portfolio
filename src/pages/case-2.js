@@ -1,12 +1,12 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import { motion } from 'framer-motion'
-import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import React from "react"
+import { Helmet } from "react-helmet"
+import { motion } from "framer-motion"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
-import '../styles/pages/case-1.scss'
+import "../styles/pages/case-1.scss"
 
-import Casefooter from '../components/case-footer'
+import Casefooter from "../components/case-footer"
 
 //Variants
 const transition = { duration: 1.4, ease: [0.6, 0.05, -0.01, 0.9] }
@@ -14,7 +14,7 @@ const transition = { duration: 1.4, ease: [0.6, 0.05, -0.01, 0.9] }
 const container = {
   enter: {
     transition: {
-      when: 'beforeChildren',
+      when: "beforeChildren",
       staggerChildren: 0.4,
       delayChildren: 0.5,
     },
@@ -94,10 +94,10 @@ function Case2(props) {
 
           <motion.p variants={mainContent} transition={transition}>
             This is a side project where the main idea was to create a place to
-            share my sparkAR filters. Since I had so much fun building these.
+            share my sparkAR filters. Since I've learned so much building these.
             I've decided to create a landing page for this service and
-            eventuelly develop a site using the JamStack, development is still a
-            WIP.
+            eventually, develop a site using the JamStack, the development is
+            still a WIP.
           </motion.p>
           <motion.div
             className="header-image"
