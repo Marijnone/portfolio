@@ -51,17 +51,17 @@ function About() {
 
       <motion.article>
         <motion.p variants={showUp} transition={transition}>
-          My name is Marijn Moviat, a Junior UX Designer that knows how to code.
+          My name is Marijn Moviat, a UX Designer that knows how to code.
           Recently graduated from The Bachelor Communication & Multimedia Design
           at the University of Applied Sciences in Amsterdam. I like to bring my
           technical knowledge to empower User Experience.
         </motion.p>
         <motion.p variants={showUp}>
           During my studies, I've focussed on UX but mostly the technical side,
-          building products with Javascript, Node.js, React. Being an
+          building products with Javascript, Node.js and React. Being an
           ever-learning designer I've realized that I enjoy UX more than just
           coding. I'm always looking for new ways to solve a problem and don't
-          step back from a technical challenge. Currently I'm learning about
+          step back from a technical challenge. Currently I'm researching
           Augmented Reality and UX.
         </motion.p>
         <motion.p variants={showUp}>
