@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
-import { useInView } from 'react-intersection-observer'
-import { useAnimation, motion } from 'framer-motion'
+import React, { useEffect } from "react"
+import { useInView } from "react-intersection-observer"
+import { useAnimation, motion } from "framer-motion"
 
 const transition = { duration: 1.8, ease: [0.6, 0.05, -0.01, 0.9] }
 
@@ -11,7 +11,7 @@ const showUp = {
     opacity: 1,
     y: 0,
     transition: {
-      when: 'beforeChildren',
+      when: "beforeChildren",
       staggerChildren: 0.2,
       delayChildren: 0.3,
       duration: 0.4,
@@ -28,12 +28,12 @@ function About() {
   const animation = useAnimation()
   const [contentRef, inView0] = useInView({
     triggerOnce: true,
-    rootMargin: '-150px',
+    rootMargin: "-150px",
   })
 
   useEffect(() => {
     if (inView0) {
-      animation.start('visible')
+      animation.start("visible")
     }
   }, [animation, inView0])
 
@@ -58,20 +58,17 @@ function About() {
         </motion.p>
         <motion.p variants={showUp}>
           During my studies, I've focussed on UX but mostly the technical side,
-          building products with Javascript, Node.js and React. Being an
-          ever-learning designer I've realized that I enjoy UX more than just
-          coding. I'm always looking for new ways to solve a problem and don't
-          step back from a technical challenge. Currently I'm researching
-          Augmented Reality and UX.
+          building products with Javascript, Node.js and React. Currently I'm
+          learning more about animation using the Framer-motion library.
         </motion.p>
         <motion.p variants={showUp}>
           When I'm not designing or coding, I'm making music under my lo-fi
           hip-hop artist name: soder. which is a two-man project.
         </motion.p>
         <motion.p variants={showUp}>
-          I'm currently looking for a UX adventure that takes me to the next
-          level. Working with motivating and skilled people creating meaningful
-          user experiences.
+          I'm currently looking for an adventure that takes me to the next
+          level. By working alongside motivating and skilled people creating
+          meaningful user experiences using the latest technologies.
         </motion.p>
       </motion.article>
     </motion.section>

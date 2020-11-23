@@ -127,7 +127,7 @@ const Intro = () => {
 
       <motion.div className="subtitle">
         <motion.h4 variants={subtitle} className="grey">
-          Currently looking for a job as a UX Designer
+          {/* Currently looking for a job as a UX Designer  */}
         </motion.h4>
       </motion.div>
     </motion.section>
